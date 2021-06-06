@@ -1,17 +1,10 @@
-import {https} from "firebase-functions"
-import  next from "next"
+import * as functions from 'firebase-functions'
+import next from 'next'
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev, conf: { distDir: 'next' } } as any)
+const handle = app.getRequestHandler()
 
-const isDev = process.env.NODE_ENV !== "production";
-const nextjsDistDir = require("./next.config.js").distDir;
-
-const nextjsServer = next({
-  dev: isDev,
-  conf: {
-    distDir: nextjsDistDir,
-  } as any,
-});
-const nextjsHandle = nextjsServer.getRequestHandler();
-
-exports.nextjsFunc = https.onRequest((req, res) => {
-  return nextjsServer.prepare().then(() => nextjsHandle(req, res));
-});
+export const nextApp = functions.https.onRequest((req, res) => {
+   console.log('File: ' + req.originalUrl)
+   return app.prepare().then(() => handle(req, res))
+})
