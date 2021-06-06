@@ -3,6 +3,7 @@
 WORKDIR /app
 
 RUN npm i -g typescript
+RUN npm install -g firebase-tools
 
 RUN yarn
 
