@@ -1,29 +1,29 @@
 {
-  "name": "ateaparty",
-  "version": "0.1.0",
-  "private": true,
+  "name": "with-firebase-hosting",
+  "version": "5.0.0",
+  "description": "Host Next.js SSR app on Firebase Cloud Functions with Firebase Hosting redirects.",
+  "main": "firebaseFunctions.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "export": "yarn run build && next export",
-    "start": "next start",
-    "format": "prettier -w --write .",
-    "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
-    "lint:prettier": "prettier --check ."
+    "dev": "next src/",
+    "build": "next build src/",
+    "start": "next start src/",
+    "serve": "npm run build && firebase emulators:start --only functions,hosting",
+    "shell": "npm run build && firebase functions:shell",
+    "deploy": "firebase deploy --only functions,hosting",
+    "logs": "firebase functions:log"
   },
   "dependencies": {
-    "next": "10.2.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "firebase-admin": "^9.4.2",
+    "firebase-functions": "^3.13.1",
+    "next": "latest",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
-    "@types/react": "17.0.9",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
-    "eslint": "^7.28.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-react": "^7.24.0",
-    "prettier": "^2.3.1",
-    "typescript": "4.3.2"
+    "@types/node": "^15.12.1",
+    "@types/react": "^17.0.9",
+    "firebase-functions-test": "^0.2.3",
+    "firebase-tools": "^9.3.0",
+    "typescript": "^4.3.2"
   }
 }
