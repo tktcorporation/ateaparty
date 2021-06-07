@@ -1,9 +1,9 @@
 import App from '../components/App'
 
-export default function Home() {
+export default function About() {
   return (
     <App>
-      <p>Index Page</p>
+      <p>About Page</p>
     </App>
   )
 }
