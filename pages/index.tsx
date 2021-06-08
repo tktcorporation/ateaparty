@@ -1,15 +1,19 @@
-import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import Head from '../components/head';
+
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>あ茶会</title>
-        <meta name="description" content="#あ茶会" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <Head 
+          title={'題名のないお茶会'}
+          site_name={'題名のないお茶会'}
+          description={'題名のないお茶会'}
+          keyword={'#あ茶会'}
+          image={'/logo_yokogumi.svg'}
+          url={'https://ateaparty.studio'}
+        />
 
       <main className={styles.main}>
           <Image

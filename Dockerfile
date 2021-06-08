@@ -3,7 +3,7 @@
 WORKDIR /app
 
 RUN npm i -g typescript
-RUN npm install -g firebase-tools
+RUN npm install -g firebase-tools vercel
 
 RUN yarn
 
