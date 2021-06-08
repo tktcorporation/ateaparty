@@ -13,15 +13,6 @@ export default function Home() {
           height={300}
         />
       </main>
-
-      {/* <footer className={styles.footer}>
-          <Image
-            src="/logo_yokogumi.svg"
-            alt="Ateapaty Logo"
-            width={292}
-            height={50}
-          />
-      </footer> */}
     </div>
   );
 }

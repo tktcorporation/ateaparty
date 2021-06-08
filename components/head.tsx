@@ -1,5 +1,5 @@
-import * as React from 'react';
-import Head from 'next/head';
+import * as React from "react";
+import Head from "next/head";
 
 interface Props {
   title: string;
@@ -10,7 +10,14 @@ interface Props {
   url: string;
 }
 
-export default function head({ title, site_name, description, keyword, image, url }: Props): JSX.Element {
+export default function head({
+  title,
+  site_name,
+  description,
+  keyword,
+  image,
+  url,
+}: Props): JSX.Element {
   return (
     <Head>
       <title>{title}</title>
