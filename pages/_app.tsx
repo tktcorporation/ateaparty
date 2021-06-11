@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         site_name={"題名のないお茶会"}
         description={"#あ茶会"}
         keyword={"#あ茶会"}
-        image={`https://ateaparty.studio/logo_yokogumi.svg`}
+        image={`https://ateaparty.studio/logo_yokogumi.png`}
         url={"https://ateaparty.studio"}
       />
       <Component {...pageProps} />
