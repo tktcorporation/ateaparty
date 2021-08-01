@@ -11,12 +11,29 @@
     "lint:prettier": "prettier --check ."
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@rebass/preset": "^4.0.5",
+    "@tippy.js/react": "^3.1.1",
+    "babel-plugin-styled-components": "^1.12.0",
     "next": "10.2.3",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-awesome-reveal": "^3.7.0",
+    "react-dom": "17.0.2",
+    "react-headroom": "^3.1.0",
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^5.0.3",
+    "react-text-loop": "^2.3.0",
+    "rebass": "^4.0.7",
+    "styled-components": "^5.2.1"
   },
   "devDependencies": {
     "@types/react": "17.0.9",
+    "@types/react-headroom": "^2.2.1",
+    "@types/react-helmet": "^6.1.0",
+    "@types/rebass": "^4.0.9",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.28.0",
