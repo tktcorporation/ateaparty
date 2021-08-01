@@ -1,0 +1,7 @@
+version: "3.7"
+services:
+  app:
+    command: /bin/bash
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
