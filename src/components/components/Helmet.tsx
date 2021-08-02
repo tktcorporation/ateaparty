@@ -31,9 +31,8 @@ const Helmet = ({ theme }: Props) => {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`${profile.bigIcon.src}`} />
-      <meta name="description" content={description} />
       <meta name="theme-color" content={theme.colors.background} />
-      <meta name="image" content={`${profile.bigIcon.src}`} />
+      {/* <meta name="image" content={`${profile.bigIcon.src}`} /> */}
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={`${profile.bigIcon.src}`} />
@@ -48,9 +47,9 @@ const Helmet = ({ theme }: Props) => {
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${profile.bigIcon.src}`} />
+      <meta name="twitter:url" content={`${profile.bigIcon.src}`} />
       {/* <meta name="twitter:image:src" content={`${profile.bigIcon.src}`} /> */}
       <meta name="keywords" content={`${profile.bigIcon.src}`} />
-      <meta name="twitter:url" content={`${profile.bigIcon.src}`} />
       <link rel="canonical" href={`${profile.bigIcon.src}`} />
 
       <link
