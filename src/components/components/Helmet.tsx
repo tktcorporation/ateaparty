@@ -30,12 +30,13 @@ const Helmet = ({ theme }: Props) => {
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <link rel="shortcut icon" href={`${profile.favicon32.src}`} />
+      <link rel="shortcut icon" href={`${profile.bigIcon.src}`} />
+      <meta name="description" content={description} />
       <meta name="theme-color" content={theme.colors.background} />
-      <meta name="image" content={`${profile.favicon32.src}`} />
+      <meta name="image" content={`${profile.bigIcon.src}`} />
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
-      <meta itemProp="image" content={`${profile.favicon32.src}`} />
+      <meta itemProp="image" content={`${profile.bigIcon.src}`} />
       <meta property="og:image" content={`${profile.bigIcon.src}`} />
       <meta property="og:site_name" content={title} />
       <meta property="og:locale" content="en_US" />
