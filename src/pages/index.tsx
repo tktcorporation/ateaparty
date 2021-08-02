@@ -11,15 +11,6 @@ export default function Home() {
     <Layout>
       <LandingPage></LandingPage>
       <About></About>
-
-      {/* <footer className={styles.footer}>
-          <Image
-            src="/logo_yokogumi.svg"
-            alt="Ateapaty Logo"
-            width={292}
-            height={50}
-          />
-      </footer> */}
       <Footer></Footer>
     </Layout>
   );
