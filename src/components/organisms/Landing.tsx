@@ -41,7 +41,7 @@ const LandingPage = () => {
       <Heading
         as="h2"
         color="primary"
-        fontSize={[6]}
+        fontSize={[5, 6]}
         mb={[5]}
         textAlign="center"
         style={centerHorizontally}
@@ -54,6 +54,7 @@ const LandingPage = () => {
                 target="_blank"
                 href={"https://twitter.com/ochakai_vrc"}
                 width={[300, 500]}
+                fontSize={[4, 7]}
                 key={text}
               >
                 {text}
