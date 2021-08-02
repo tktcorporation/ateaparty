@@ -1,7 +1,7 @@
 import React from "react";
-import { Helmet as ReactHelmet } from "react-helmet";
 import { withTheme } from "styled-components";
 import { Theme } from "../../types";
+import Head from "next/head";
 
 type Props = {
   theme: Theme;
@@ -20,7 +20,7 @@ const Helmet = ({ theme }: Props) => {
   };
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: "jp" }}>
+    <Head>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap"
@@ -29,10 +29,11 @@ const Helmet = ({ theme }: Props) => {
       <link rel="icon" href="/favicon.ico" />
       <meta charSet="utf-8" />
       <title>{title}</title>
+      <meta name="viewport" content="width=device-width" />
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`${profile.bigIcon.src}`} />
       <meta name="theme-color" content={theme.colors.background} />
-      {/* <meta name="image" content={`${profile.bigIcon.src}`} /> */}
+      <meta name="image" content={`${profile.bigIcon.src}`} />
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={`${profile.bigIcon.src}`} />
@@ -48,7 +49,7 @@ const Helmet = ({ theme }: Props) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${profile.bigIcon.src}`} />
       <meta name="twitter:url" content={`${profile.bigIcon.src}`} />
-      {/* <meta name="twitter:image:src" content={`${profile.bigIcon.src}`} /> */}
+      <meta name="twitter:image:src" content={`${profile.bigIcon.src}`} />
       <meta name="keywords" content={`${profile.bigIcon.src}`} />
       <link rel="canonical" href={`${profile.bigIcon.src}`} />
 
@@ -69,7 +70,7 @@ const Helmet = ({ theme }: Props) => {
         sizes="16x16"
         href={`${profile.favicon16.src}`}
       />
-    </ReactHelmet>
+    </Head>
   );
 };
 export default withTheme(Helmet);
