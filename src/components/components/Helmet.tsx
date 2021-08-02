@@ -47,6 +47,13 @@ const Helmet = ({ theme }: Props) => {
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${profile.bigIcon.src}`} />
       <meta name="twitter:image:src" content={`${profile.bigIcon.src}`} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta name="keywords" content={`${profile.bigIcon.src}`} />
+      <meta property="og:url" content={`${profile.bigIcon.src}`} />
+      <meta name="twitter:url" content={`${profile.bigIcon.src}`} />
+      <link rel="canonical" href={`${profile.bigIcon.src}`} />
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
