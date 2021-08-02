@@ -12,10 +12,10 @@ const Helmet = ({ theme }: Props) => {
     title: "題名のないお茶会",
     description: "VRChatで活動するクラシックを中心とした音楽団体です",
     profile: {
-      favicon32: { src: "https://ateaparty.studio/logo_yokogumi.png" },
-      bigIcon: { src: "https://ateaparty.studio/logo_yokogumi.png" },
-      appleIcon: { src: "https://ateaparty.studio/logo_yokogumi.png" },
-      favicon16: { src: "https://ateaparty.studio/logo_yokogumi.png" },
+      favicon32: { src: "https://ateaparty.studio/logo_symbol.png" },
+      bigIcon: { src: "https://ateaparty.studio/logo_symbol.png" },
+      appleIcon: { src: "https://ateaparty.studio/logo_symbol.png" },
+      favicon16: { src: "https://ateaparty.studio/logo_symbol.png" },
     },
   };
 
