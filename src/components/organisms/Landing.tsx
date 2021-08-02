@@ -7,18 +7,23 @@ import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
-import { Landing } from "../../types";
+import { Landing, SocialLink as SocialLinkTypes } from "../../types";
 import Image from "next/image";
+import Link from "../components/Link";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
 const LandingPage = () => {
-  const { name, roles, socialLinks, deterministic } = {
-    name: "あ茶会",
+  const { roles, deterministic } = {
     roles: ["#あ茶会", "#あ茶", "#ChangeTheWorld"],
-    socialLinks: [{ name: "girhub" }, { name: "girhub" }, { name: "girhub" }],
     deterministic: true,
-  } as Landing & { deterministic: boolean };
+  };
+  const socialLinks: Array<SocialLinkTypes & {invert: boolean}> = [{
+    name: "Twitter",
+    url: "https://twitter.com/ochakai_vrc",
+    icon: "twitter",
+    invert: false,
+  }]
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>
@@ -31,21 +36,11 @@ const LandingPage = () => {
         />
       </Flex>
 
-      {/* <Heading
-        textAlign="center"
-        as="h1"
-        color="primary"
-        fontSize={[6, 7]}
-        mb={[3, 4, 5]}
-      >
-        {`Hello, I'm ${name}!`}
-      </Heading> */}
-
       <Heading
         as="h2"
         color="primary"
-        fontSize={[5, 6]}
-        mb={[3, 5]}
+        fontSize={[6]}
+        mb={[5]}
         textAlign="center"
         style={centerHorizontally}
       >
@@ -53,20 +48,12 @@ const LandingPage = () => {
           {roles
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
-              <Text width={[300, 500]} key={text}>
+              <Text target="_blank" href={"https://twitter.com/ochakai_vrc"} width={[300, 500]} key={text}>
                 {text}
               </Text>
             ))}
         </TextLoop>
       </Heading>
-
-      <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-        {socialLinks.map((sl) => (
-          <Box mx={3} fontSize={[5, 6, 6]} key={sl.name}>
-            <SocialLink {...sl} />
-          </Box>
-        ))}
-      </Flex>
 
       <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
     </Section.Container>
