@@ -9,12 +9,14 @@ import { SocialLink as SocialLinkTypes } from "../../types";
 const Footer = () => {
   const { name, socialLinks } = {
     name: TITLE,
-    socialLinks: [{
-      name: "Twitter",
-      url: "https://twitter.com/ochakai_vrc",
-      icon: "twitter",
-    }] as Array<SocialLinkTypes & {invert: boolean}>
-  }
+    socialLinks: [
+      {
+        name: "Twitter",
+        url: "https://twitter.com/ochakai_vrc",
+        icon: "twitter",
+      },
+    ] as Array<SocialLinkTypes & { invert: boolean }>,
+  };
 
   return (
     <Box p={[2, 3]} backgroundColor="primary" id="footer" as="footer">

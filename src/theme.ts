@@ -19,7 +19,7 @@ export const theme = {
     },
   },
   fonts: {
-    body: 'Kiwi Maru, abin, Open Sans, sans-serif;',
+    body: "Kiwi Maru, abin, Open Sans, sans-serif;",
     heading: "inherit",
     monospace: "monospace",
   },

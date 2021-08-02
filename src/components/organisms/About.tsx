@@ -11,12 +11,16 @@ import { SECTION } from "../utils/constants";
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
 ## Questの世界に良き音楽を
-`
+`;
 
 const About = () => {
   return (
     <Section.Container id={SECTION.about}>
-      <Section.Header name={"「題名のないお茶会」とは"} icon="👀" label="person" />
+      <Section.Header
+        name={"「題名のないお茶会」とは"}
+        icon="👀"
+        label="person"
+      />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} mt={2}>
           <Fade direction="down" triggerOnce>

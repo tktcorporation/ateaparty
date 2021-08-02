@@ -18,12 +18,14 @@ const LandingPage = () => {
     roles: ["#あ茶会", "#あ茶", "#ChangeTheWorld"],
     deterministic: true,
   };
-  const socialLinks: Array<SocialLinkTypes & {invert: boolean}> = [{
-    name: "Twitter",
-    url: "https://twitter.com/ochakai_vrc",
-    icon: "twitter",
-    invert: false,
-  }]
+  const socialLinks: Array<SocialLinkTypes & { invert: boolean }> = [
+    {
+      name: "Twitter",
+      url: "https://twitter.com/ochakai_vrc",
+      icon: "twitter",
+      invert: false,
+    },
+  ];
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>
@@ -48,7 +50,12 @@ const LandingPage = () => {
           {roles
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
-              <Text target="_blank" href={"https://twitter.com/ochakai_vrc"} width={[300, 500]} key={text}>
+              <Text
+                target="_blank"
+                href={"https://twitter.com/ochakai_vrc"}
+                width={[300, 500]}
+                key={text}
+              >
                 {text}
               </Text>
             ))}
