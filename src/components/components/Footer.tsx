@@ -4,26 +4,25 @@ import { Text, Box, Flex } from "rebass/styled-components";
 import { Fade } from "react-awesome-reveal";
 import SocialLink from "./SocialLink";
 import Link from "./Link";
-import { useSiteQuery } from "../queries/useSiteQuery";
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL } from "../utils/constants";
+import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL, TITLE } from "../utils/constants";
+import { SocialLink as SocialLinkTypes } from "../../types";
 
 const Footer = () => {
-  const { name, socialLinks } = useSiteQuery();
+  const { name, socialLinks } = {
+    name: TITLE,
+    socialLinks: [{
+      name: "Twitter",
+      url: "https://twitter.com/ochakai_vrc",
+      icon: "twitter",
+    }] as Array<SocialLinkTypes & {invert: boolean}>
+  }
 
   return (
     <Box p={[2, 3]} backgroundColor="primary" id="footer" as="footer">
       <FooterContainer>
         <Fade direction="left" triggerOnce>
           <Text fontSize={[2, 3]} color="background">
-            <span>{`${name} Portfolio - Powered by `}</span>
-            <Link href={GATSBY_URL}>Gatsby</Link>
-            <span>, </span>
-            <Link href={CONTENTFUL_URL}>Contentful</Link>
-            <span> and </span>
-            <Link href={NETLIFY_URL}>Netlify</Link>{" "}
-            <span role="img" aria-label="heart">
-              ❤️
-            </span>
+            <span>{`${name}`}</span>
           </Text>
         </Fade>
         <Flex>
