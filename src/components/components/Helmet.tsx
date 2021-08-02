@@ -12,10 +12,10 @@ const Helmet = ({ theme }: Props) => {
     title: "題名のないお茶会",
     description: "VRChatで活動するクラシックを中心とした音楽団体です",
     profile: {
-      favicon32: { src: "https://ateaparty.studio/logo_symbol.png" },
-      bigIcon: { src: "https://ateaparty.studio/logo_symbol.png" },
-      appleIcon: { src: "https://ateaparty.studio/logo_symbol.png" },
-      favicon16: { src: "https://ateaparty.studio/logo_symbol.png" },
+      favicon32: { src: "https://www.ateaparty.studio/logo_symbol.png" },
+      bigIcon: { src: "https://www.ateaparty.studio/logo_symbol.png" },
+      appleIcon: { src: "https://www.ateaparty.studio/logo_symbol.png" },
+      favicon16: { src: "https://www.ateaparty.studio/logo_symbol.png" },
     },
   };
 
@@ -26,6 +26,7 @@ const Helmet = ({ theme }: Props) => {
         href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap"
       />
 
+      <link rel="icon" href="/favicon.ico" />
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="description" content={description} />
