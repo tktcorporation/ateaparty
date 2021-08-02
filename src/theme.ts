@@ -19,7 +19,7 @@ export const theme = {
     },
   },
   fonts: {
-    body: '\"ヒラギノUD丸ゴ Std W6\",HiraginoUDSansRStd-W6,\"ヒラギノUD丸ゴ W6 JIS2004\",Hiragino UD Sans Rd W6 JIS2004,\"ヒラギノ角ゴ Pro W6\",Hiragino Kaku Gothic Pro W6,\"メイリオ\",Meiryo,\"ＭＳ Ｐゴシック\",sans-serif',
+    body: 'Kiwi Maru, abin, Open Sans, sans-serif;',
     heading: "inherit",
     monospace: "monospace",
   },

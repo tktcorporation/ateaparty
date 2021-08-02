@@ -20,7 +20,9 @@ const Helmet = ({ theme }: Props) => {
   };
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: "en" }}>
+    <ReactHelmet htmlAttributes={{ lang: "jp" }}>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap" />
+
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="description" content={description} />
