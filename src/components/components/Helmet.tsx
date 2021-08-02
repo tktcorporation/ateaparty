@@ -36,21 +36,19 @@ const Helmet = ({ theme }: Props) => {
       <meta itemProp="name" content={title} />
       <meta itemProp="description" content={description} />
       <meta itemProp="image" content={`${profile.favicon32.src}`} />
-      <meta name="og:title" content={title} />
-      <meta name="og:description" content={description} />
-      <meta name="og:image" content={`${profile.bigIcon.src}`} />
-      <meta name="og:site_name" content={title} />
-      <meta name="og:locale" content="en_US" />
-      <meta name="og:type" content="website" />
+      <meta property="og:image" content={`${profile.bigIcon.src}`} />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:locale" content="en_US" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={`${profile.bigIcon.src}`} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={`${profile.bigIcon.src}`} />
       <meta name="twitter:image:src" content={`${profile.bigIcon.src}`} />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
       <meta name="keywords" content={`${profile.bigIcon.src}`} />
-      <meta property="og:url" content={`${profile.bigIcon.src}`} />
       <meta name="twitter:url" content={`${profile.bigIcon.src}`} />
       <link rel="canonical" href={`${profile.bigIcon.src}`} />
 
