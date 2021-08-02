@@ -2,12 +2,12 @@ import {
   faMedium,
   faTwitter,
   faGithub,
-} from '@fortawesome/free-brands-svg-icons';
+} from "@fortawesome/free-brands-svg-icons";
 import {
   faGlobe,
   faEnvelope,
   faCoffee,
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 export const ICONS = [
   faMedium,

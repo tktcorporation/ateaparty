@@ -3,22 +3,15 @@ import styles from "../styles/Home.module.css";
 import Head from "../components/head";
 import About from "../components/organisms/About";
 import Layout from "../components/components/Layout";
+import LandingPage from "../components/organisms/Landing";
 
 export default function Home() {
   return (
     <Layout>
-      <div className={styles.container}>
-        <main className={styles.main}>
-          <Image
-            src="/logo_yokogumi.svg"
-            alt="Ateapaty Logo"
-            width={1200}
-            height={300}
-          />
-          <About></About>
-        </main>
+      <LandingPage></LandingPage>
+      <About></About>
 
-        {/* <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
           <Image
             src="/logo_yokogumi.svg"
             alt="Ateapaty Logo"
@@ -26,7 +19,6 @@ export default function Home() {
             height={50}
           />
       </footer> */}
-      </div>
     </Layout>
   );
 }

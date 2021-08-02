@@ -8,17 +8,16 @@ type Props = {
 };
 
 const Helmet = ({ theme }: Props) => {
-  const { name, description, profile } = {
-    name: "",
-    description: "",
+  const { title, description, profile } = {
+    title: "題名のないお茶会",
+    description: "VRChatで活動するクラシックを中心とした音楽団体です",
     profile: {
-      favicon32: {src: ''},
-      bigIcon: {src: ''},
-      appleIcon: {src: ''},
-      favicon16: {src: ''},
+      favicon32: { src: "https://ateaparty.studio/logo_yokogumi.png" },
+      bigIcon: { src: "https://ateaparty.studio/logo_yokogumi.png" },
+      appleIcon: { src: "https://ateaparty.studio/logo_yokogumi.png" },
+      favicon16: { src: "https://ateaparty.studio/logo_yokogumi.png" },
     },
   };
-  const title = `${name} Portfolio`;
 
   return (
     <ReactHelmet htmlAttributes={{ lang: "en" }}>
