@@ -3,8 +3,7 @@ import styled from "styled-components";
 import { Text, Box, Flex } from "rebass/styled-components";
 import { Fade } from "react-awesome-reveal";
 import SocialLink from "./SocialLink";
-import Link from "./Link";
-import { CONTENTFUL_URL, GATSBY_URL, NETLIFY_URL, TITLE } from "../utils/constants";
+import { TITLE } from "../utils/constants";
 import { SocialLink as SocialLinkTypes } from "../../types";
 
 const Footer = () => {
