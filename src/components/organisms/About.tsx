@@ -6,12 +6,18 @@ import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 // import Triangle from '../components/Triangle';
 import markdownRenderer from "../components/MarkdownRenderer";
-import { SECTION } from "../utils/constants";
+import { BASE_URL, SECTION, TITLE } from "../utils/constants";
+import { Logo } from "../../domain/Logo";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
 ## Questの世界に良き音楽を
 `;
+
+const profile = {
+  alt: TITLE,
+  src: new Logo(BASE_URL).symbolUrl({isPath: true, ext: 'svg'}),
+}
 
 const About = () => {
   return (
@@ -30,11 +36,11 @@ const About = () => {
 
         <Box
           width={[1, 1, 2 / 6]}
-          style={{ maxWidth: "300px", margin: "auto" }}
+          style={{ maxWidth: "500px", margin: "auto" }}
         >
-          {/* <Fade direction="right" triggerOnce>
-            <ProfilePicture mt={[4, 4, 0]} ml={[0, 0, 1]} {...profile} />
-          </Fade> */}
+          <Fade direction="right" triggerOnce>
+            <Image mt={[4, 4, 0]} ml={[0, 0, 1]} src={profile.src} alt={profile.alt} />
+          </Fade>
         </Box>
       </Flex>
     </Section.Container>
