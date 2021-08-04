@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "format": "prettier -w --write .",
-    "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0",
+    "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=5",
     "lint:prettier": "prettier --check .",
     "test": "jest"
   },
@@ -40,7 +40,9 @@
     "@typescript-eslint/parser": "^4.26.0",
     "eslint": "^7.28.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
     "jest": "^27.0.6",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.4",

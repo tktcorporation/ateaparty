@@ -1,16 +1,16 @@
 module.exports = {
-  preset: 'ts-jest',
+  preset: "ts-jest",
   globals: {
-      'ts-jest': {
-          tsconfig: '<rootDir>/tsconfig.json'
-      }
+    "ts-jest": {
+      tsconfig: "<rootDir>/tsconfig.json",
+    },
   },
-  moduleFileExtensions: ['js', 'json', 'ts'],
-  rootDir: '.',
-  testRegex: '.spec.ts$',
+  moduleFileExtensions: ["js", "json", "ts"],
+  rootDir: ".",
+  testRegex: ".spec.ts$",
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest',
+    "^.+\\.(t|j)s$": "ts-jest",
   },
-  coverageDirectory: './coverage',
-  testEnvironment: 'node',
-}
+  coverageDirectory: "./coverage",
+  testEnvironment: "node",
+};
