@@ -17,7 +17,7 @@ const Project = ({
   type,
   publishedDate,
   logo,
-}: Props) => (
+}: Props): JSX.Element => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>

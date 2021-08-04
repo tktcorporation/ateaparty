@@ -7,7 +7,9 @@ import Helmet from "./Helmet";
 import "tippy.js/dist/tippy.css";
 
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme {}
+  export interface DefaultTheme extends Theme {
+    buttons: unknown;
+  }
 }
 
 loadIcons();
@@ -15,16 +17,16 @@ loadIcons();
 const GlobalStyle = createGlobalStyle`
   *,
   *::after,
-  *::before { 
+  *::before {
     box-sizing: inherit;
   }
 
-  html { 
+  html {
     scroll-behavior: smooth;
   }
 
   body {
-    box-sizing: border-box; 
+    box-sizing: border-box;
     margin: 0;
     width: 100vw;
     overflow-x: hidden;
@@ -38,7 +40,7 @@ type Props = {
   children: ReactNode;
 };
 
-const Layout = ({ children }: Props) => (
+const Layout = ({ children }: Props): JSX.Element => (
   <main>
     <ThemeProvider theme={theme as Theme}>
       <GlobalStyle />

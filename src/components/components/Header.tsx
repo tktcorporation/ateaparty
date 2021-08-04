@@ -1,4 +1,5 @@
-import React from "react";
+export const hoge = "hoge";
+// import React from "react";
 // import Headroom from "react-headroom";
 // import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
 // import styled from "styled-components";

@@ -3,7 +3,7 @@ import Layout from "../components/components/Layout";
 import LandingPage from "../components/organisms/Landing";
 import Footer from "../components/components/Footer";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <Layout>
       <LandingPage></LandingPage>

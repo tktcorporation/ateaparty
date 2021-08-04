@@ -16,7 +16,7 @@ const Container = ({
   id,
   children,
   Background = DefaultBackground,
-}: ContainerProps) => (
+}: ContainerProps): JSX.Element => (
   <section id={id && getSectionHref(id)} style={{ position: "relative" }}>
     <Background />
     <SectionContainer>{children}</SectionContainer>
@@ -29,7 +29,7 @@ type HeaderProps = {
   label?: string;
 };
 
-const Header = ({ name, icon, label }: HeaderProps) => (
+const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
   <Slide direction="left" triggerOnce>
     <Heading color="text" mb={4}>
       <Link selected>

@@ -1,4 +1,4 @@
-export const loadScript = (src: string) => {
+export const loadScript = (src: string): void => {
   const tag = document.createElement("script");
   tag.src = src;
   tag.defer = true;

@@ -1,4 +1,5 @@
-import React, { ReactNode } from "react";
+export const hoge = "hoge";
+// import React, { ReactNode } from "react";
 // import { Box, Flex, Heading, Text } from "rebass/styled-components";
 // import styled from "styled-components";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

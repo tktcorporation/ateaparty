@@ -11,8 +11,8 @@ declare module "@rebass/preset" {
     shadows: Shadows;
     text: Text;
     queries: Queries;
-    variants: any;
-    buttons: any;
+    variants: unknown;
+    buttons: unknown;
   }
 
   interface Colors {
@@ -69,11 +69,11 @@ declare module "@rebass/preset" {
 }
 
 declare module "*.svg" {
-  const content: any;
+  const content: unknown;
   export default content;
 }
 
 declare module "*.json" {
-  const value: any;
+  const value: unknown;
   export default value;
 }

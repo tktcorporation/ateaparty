@@ -6,7 +6,7 @@ import SocialLink from "./SocialLink";
 import { TITLE } from "../utils/constants";
 import { SocialLink as SocialLinkTypes } from "../../types";
 
-const Footer = () => {
+const Footer: React.FC = () => {
   const { name, socialLinks } = {
     name: TITLE,
     socialLinks: [

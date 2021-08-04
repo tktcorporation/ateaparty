@@ -2,21 +2,25 @@ import React from "react";
 import { withTheme } from "styled-components";
 import { Theme } from "../../types";
 import Head from "next/head";
+import { Logo } from "../../domain/Logo";
+import { BASE_URL, TITLE } from "../utils/constants";
 
 type Props = {
   theme: Theme;
 };
 
+new Logo(BASE_URL).symbolUrl;
+
 const Helmet = ({ theme }: Props) => {
   const { title, description, profile } = {
-    title: "題名のないお茶会",
+    title: TITLE,
     description: "VRChatで活動するクラシックを中心とした音楽団体です",
-    profile: {
-      favicon32: { src: "https://www.ateaparty.studio/logo_symbol.png" },
-      bigIcon: { src: "https://www.ateaparty.studio/logo_symbol.png" },
-      appleIcon: { src: "https://www.ateaparty.studio/logo_symbol.png" },
-      favicon16: { src: "https://www.ateaparty.studio/logo_symbol.png" },
-    },
+    profile: ((src: string) => ({
+      favicon32: { src },
+      bigIcon: { src },
+      appleIcon: { src },
+      favicon16: { src },
+    }))(new Logo(BASE_URL).symbolUrl({ isPath: false, ext: "png" })),
   };
 
   return (

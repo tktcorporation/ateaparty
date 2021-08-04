@@ -1,31 +1,28 @@
 import React from "react";
-import { Heading, Flex, Box, Text } from "rebass/styled-components";
+import { Heading, Flex, Text } from "rebass/styled-components";
 import TextLoop from "react-text-loop";
 import Section from "../components/Section";
-import SocialLink from "../components/SocialLink";
 import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
-import { Landing, SocialLink as SocialLinkTypes } from "../../types";
 import Image from "next/image";
-import Link from "../components/Link";
 
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
-const LandingPage = () => {
+const LandingPage = (): JSX.Element => {
   const { roles, deterministic } = {
     roles: ["#あ茶会", "#あ茶", "#ChangeTheWorld"],
     deterministic: true,
   };
-  const socialLinks: Array<SocialLinkTypes & { invert: boolean }> = [
-    {
-      name: "Twitter",
-      url: "https://twitter.com/ochakai_vrc",
-      icon: "twitter",
-      invert: false,
-    },
-  ];
+  // const socialLinks: Array<SocialLinkTypes & { invert: boolean }> = [
+  //   {
+  //     name: "Twitter",
+  //     url: "https://twitter.com/ochakai_vrc",
+  //     icon: "twitter",
+  //     invert: false,
+  //   },
+  // ];
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>

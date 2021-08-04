@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Image, Flex } from "rebass/styled-components";
-import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
@@ -16,10 +15,10 @@ const vision = `## 演奏者に表現の場を
 
 const profile = {
   alt: TITLE,
-  src: new Logo(BASE_URL).symbolUrl({isPath: true, ext: 'svg'}),
-}
+  src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
+};
 
-const About = () => {
+const About: React.FC = () => {
   return (
     <Section.Container id={SECTION.about}>
       <Section.Header
@@ -39,7 +38,12 @@ const About = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Fade direction="right" triggerOnce>
-            <Image mt={[4, 4, 0]} ml={[0, 0, 1]} src={profile.src} alt={profile.alt} />
+            <Image
+              mt={[4, 4, 0]}
+              ml={[0, 0, 1]}
+              src={profile.src}
+              alt={profile.alt}
+            />
           </Fade>
         </Box>
       </Flex>
@@ -47,12 +51,12 @@ const About = () => {
   );
 };
 
-const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-  transition: all 0.4s ease-out;
-  &:hover {
-    border-radius: 20%;
-  }
-`;
+// const ProfilePicture = styled(Image)`
+//   border-radius: 50%;
+//   transition: all 0.4s ease-out;
+//   &:hover {
+//     border-radius: 20%;
+//   }
+// `;
 
 export default About;
