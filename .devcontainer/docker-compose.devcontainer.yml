@@ -4,4 +4,6 @@ services:
     command: /bin/bash
     working_dir: /workspace
     volumes:
-      - .:/workspace
+      - .:/workspace:cached
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    tty: true
