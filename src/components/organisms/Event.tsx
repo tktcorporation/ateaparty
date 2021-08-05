@@ -14,7 +14,7 @@ const teapartySunday = `# 毎週 日曜日のお茶会
 お茶菓子を片手に、いっしょに音楽を楽しみましょう。
 
 演奏したい方も、演奏を聴きたい方も、どちらも歓迎です。
-`
+`;
 
 const miniConcert = `# ミニコンサート
 偶数月の第3日曜日、14時30分からは、コンサートの時間です。
@@ -22,7 +22,7 @@ const miniConcert = `# ミニコンサート
 毎週のお茶会よりも少しかしこまった形で、音楽に耳を傾けられる場所。
 
 参加者も随時募集しています。
-`
+`;
 
 const profile = {
   alt: TITLE,
@@ -32,15 +32,14 @@ const profile = {
 export const Event: React.FC = () => {
   return (
     <Section.Container id={SECTION.event}>
-      <Section.Header
-        name={"何をやってるの？"}
-        icon="👀"
-        label="person"
-      />
+      <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
           <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={teapartySunday} renderers={markdownRenderer} />
+            <ReactMarkdown
+              source={teapartySunday}
+              renderers={markdownRenderer}
+            />
           </Fade>
         </Box>
 

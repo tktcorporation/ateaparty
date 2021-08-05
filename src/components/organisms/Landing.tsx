@@ -47,12 +47,15 @@ const LandingPage = (): JSX.Element => {
           {roles
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
-              <Text
-                width={[300, 500]}
-                fontSize={[4, 7]}
-                key={text}
-              >
-                #<a target="_blank" href={`https://twitter.com/hashtag/${text}`}>{text}</a>
+              <Text width={[300, 500]} fontSize={[4, 7]} key={text}>
+                #
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  href={`https://twitter.com/hashtag/${text}`}
+                >
+                  {text}
+                </a>
               </Text>
             ))}
         </TextLoop>

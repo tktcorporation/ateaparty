@@ -9,12 +9,16 @@ import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 import { Logo } from "../../domain/Logo";
 
-const props = {profile: {bigIcon: {
-  alt: TITLE,
-  src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
-}}};
+const props = {
+  profile: {
+    bigIcon: {
+      alt: TITLE,
+      src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
+    },
+  },
+};
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const { profile } = props;
 
   return (

@@ -5,7 +5,7 @@ type Props = {
 };
 
 let isLoadwidgets = false;
-export const Twemb = ({twitterHref}: Props): JSX.Element => {
+export const Twemb = ({ twitterHref }: Props): JSX.Element => {
   React.useEffect(() => {
     if (!isLoadwidgets) {
       const s = document.createElement("script");
@@ -22,7 +22,6 @@ export const Twemb = ({twitterHref}: Props): JSX.Element => {
       // data-theme="dark"
       data-chrome="noheadernofooternoborders"
       href={twitterHref}
-    >
-    </a>
+    ></a>
   );
 };
