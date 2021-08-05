@@ -7,38 +7,46 @@ import Section from "../components/Section";
 import markdownRenderer from "../components/MarkdownRenderer";
 import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { Logo } from "../../domain/Logo";
-import {Twemb} from "../molecules/TwitterWidget";
 
-const vision = `## 演奏者に表現の場を
-## 演奏者に交流の場を
-## Questの世界に良き音楽を
+const teapartySunday = `# 毎週 日曜日のお茶会
+毎週日曜日の14時30分からお茶会を開催しています。
+
+お茶菓子を片手に、いっしょに音楽を楽しみましょう。
+
+演奏したい方も、演奏を聴きたい方も、どちらも歓迎です。
 `
 
-const purpose = `「題名のないお茶会」は [VRChat](https://vrchat.com/) というVR空間内で活動する音楽団体です。
+const miniConcert = `# ミニコンサート
+偶数月の第3日曜日、14時30分からは、コンサートの時間です。
 
-新しい世界で音楽の輪を広げることを目的に活動しています。
-`;
+毎週のお茶会よりも少しかしこまった形で、音楽に耳を傾けられる場所。
+
+参加者も随時募集しています。
+`
 
 const profile = {
   alt: TITLE,
   src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
 };
 
-const About: React.FC = () => {
+export const Event: React.FC = () => {
   return (
-    <Section.Container id={SECTION.about}>
+    <Section.Container id={SECTION.event}>
       <Section.Header
-        name={"「題名のないお茶会」"}
-        icon=""
-        label="title"
+        name={"何をやってるの？"}
+        icon="👀"
+        label="person"
       />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
+        <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
           <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={vision} renderers={markdownRenderer} />
+            <ReactMarkdown source={teapartySunday} renderers={markdownRenderer} />
           </Fade>
+        </Box>
+
+        <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
           <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={purpose} renderers={markdownRenderer} />
+            <ReactMarkdown source={miniConcert} renderers={markdownRenderer} />
           </Fade>
         </Box>
 
@@ -47,26 +55,15 @@ const About: React.FC = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Fade direction="right" triggerOnce>
-            {/* <Image
+            <Image
               mt={[4, 4, 0]}
               ml={[0, 0, 1]}
               src={profile.src}
               alt={profile.alt}
-            /> */}
-            <Twemb twitterHref={'https://twitter.com/ochakai_vrc'}></Twemb>
+            />
           </Fade>
         </Box>
       </Flex>
     </Section.Container>
   );
 };
-
-// const ProfilePicture = styled(Image)`
-//   border-radius: 50%;
-//   transition: all 0.4s ease-out;
-//   &:hover {
-//     border-radius: 20%;
-//   }
-// `;
-
-export default About;
