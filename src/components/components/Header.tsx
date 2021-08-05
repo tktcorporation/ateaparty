@@ -1,64 +1,69 @@
-export const hoge = "hoge";
-// import React from "react";
-// import Headroom from "react-headroom";
-// import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
-// import styled from "styled-components";
-// import Link from "./Link";
-// import { capitalize } from "../utils/string";
+import React from "react";
+import Headroom from "react-headroom";
+import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
+import styled from "styled-components";
+import Link from "./Link";
+import { capitalize } from "../utils/string";
 // import { useHelmetQuery } from "../queries/useHelmetQuery";
-// import { SECTION } from "../utils/constants";
-// import { getSectionHref } from "../utils/helpers";
+import { BASE_URL, SECTION, TITLE } from "../utils/constants";
+import { getSectionHref } from "../utils/helpers";
+import { Logo } from "../../domain/Logo";
 
-// const Header = () => {
-//   const { profile } = useHelmetQuery();
+const props = {profile: {bigIcon: {
+  alt: TITLE,
+  src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
+}}};
 
-//   return (
-//     <StyledHeadroom>
-//       <Flex
-//         flexWrap="wrap"
-//         justifyContent="space-between"
-//         alignItems="center"
-//         px={3}
-//       >
-//         <RebassLink href={`#${getSectionHref(SECTION.home)}`} variant="empty">
-//           <Flex justifyContent="center">
-//             <Image
-//               src={profile.bigIcon.src}
-//               height={["60px", "80px"]}
-//               width={["60px", "80px"]}
-//               alt="Portfolio Logo"
-//               p={2}
-//               css={{ borderRadius: "20px", cursor: "pointer" }}
-//             />
-//           </Flex>
-//         </RebassLink>
-//         <Flex mr={[0, 3, 5]}>
-//           {Object.keys(SECTION)
-//             .filter((id) => id !== "home")
-//             .map((id) => (
-//               <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-//                 <Link href={`#${id}`} tabIndex={0}>
-//                   {capitalize(id)}
-//                 </Link>
-//               </Box>
-//             ))}
-//         </Flex>
-//       </Flex>
-//     </StyledHeadroom>
-//   );
-// };
+const Header = () => {
+  const { profile } = props;
 
-// const StyledHeadroom = styled(Headroom)`
-//   * {
-//     transition: background-color 0.1s ease;
-//   }
+  return (
+    <StyledHeadroom>
+      <Flex
+        flexWrap="wrap"
+        justifyContent="space-between"
+        alignItems="center"
+        px={3}
+      >
+        <RebassLink href={`#${getSectionHref(SECTION.home)}`} variant="empty">
+          <Flex justifyContent="center">
+            <Image
+              src={profile.bigIcon.src}
+              height={["60px", "80px"]}
+              width={["60px", "80px"]}
+              alt="Portfolio Logo"
+              p={2}
+              css={{ borderRadius: "20px", cursor: "pointer" }}
+            />
+          </Flex>
+        </RebassLink>
+        <Flex mr={[0, 3, 5]}>
+          {Object.keys(SECTION)
+            .filter((id) => id !== "home")
+            .map((id) => (
+              <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
+                <Link href={`#${id}`} tabIndex={0}>
+                  {capitalize(id)}
+                </Link>
+              </Box>
+            ))}
+        </Flex>
+      </Flex>
+    </StyledHeadroom>
+  );
+};
 
-//   .headroom--pinned {
-//     background-color: ${({ theme }) => theme.colors.primary};
-//   }
+const StyledHeadroom = styled(Headroom)`
+  * {
+    transition: background-color 0.1s ease;
+  }
 
-//   position: absolute;
-//   width: 100%;
-// `;
+  .headroom--pinned {
+    background-color: ${({ theme }) => theme.colors.primary};
+  }
 
-// export default Header;
+  position: absolute;
+  width: 100%;
+`;
+
+export default Header;

@@ -19,11 +19,6 @@ const purpose = `「題名のないお茶会」は [VRChat](https://vrchat.com/)
 新しい世界で音楽の輪を広げることを目的に活動しています。
 `;
 
-const profile = {
-  alt: TITLE,
-  src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
-};
-
 const About: React.FC = () => {
   return (
     <Section.Container id={SECTION.about}>

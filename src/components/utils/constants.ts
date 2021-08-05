@@ -4,8 +4,7 @@ export const BASE_URL = "https://www.ateaparty.studio/";
 
 export enum SECTION {
   home = "Home",
-  about = "About me",
-  event = "イベント",
-  projects = "Projects",
-  writing = "Writing",
+  about = "About",
+  event = "Event",
+  news = "News",
 }
