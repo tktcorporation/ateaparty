@@ -12,7 +12,7 @@ const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
 const LandingPage = (): JSX.Element => {
   const { roles, deterministic } = {
-    roles: ["#あ茶会", "#あ茶", "#ChangeTheWorld"],
+    roles: ["あ茶会", "あ茶", "ChangeTheWorld"],
     deterministic: true,
   };
   // const socialLinks: Array<SocialLinkTypes & { invert: boolean }> = [
@@ -48,13 +48,11 @@ const LandingPage = (): JSX.Element => {
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
               <Text
-                target="_blank"
-                href={"https://twitter.com/ochakai_vrc"}
                 width={[300, 500]}
                 fontSize={[4, 7]}
                 key={text}
               >
-                {text}
+                #<a target="_blank" href={`https://twitter.com/hashtag/${text}`}>{text}</a>
               </Text>
             ))}
         </TextLoop>
