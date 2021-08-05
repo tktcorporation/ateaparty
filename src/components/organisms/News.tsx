@@ -10,8 +10,8 @@ export const News: React.FC = () => {
     <Section.Container id={SECTION.news}>
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <Fade direction="down" triggerOnce>
+        <Box width={[1, 1, 1 / 2]} px={[2, 3, 5]} mt={2}>
+          <Fade direction="right" triggerOnce>
             <TwitterTweetEmbed tweetId={"1422834615576711168"} />
           </Fade>
         </Box>
