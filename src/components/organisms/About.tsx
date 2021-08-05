@@ -36,12 +36,6 @@ const About: React.FC = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Fade direction="right" triggerOnce>
-            {/* <Image
-              mt={[4, 4, 0]}
-              ml={[0, 0, 1]}
-              src={profile.src}
-              alt={profile.alt}
-            /> */}
             <Twemb twitterHref={"https://twitter.com/ochakai_vrc"}></Twemb>
           </Fade>
         </Box>

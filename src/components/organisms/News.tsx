@@ -3,7 +3,6 @@ import { Box, Flex } from "rebass/styled-components";
 import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
-// eslint-disable-next-line no-unused-vars
 import { TwitterTweetEmbed } from "react-twitter-embed";
 
 export const News: React.FC = () => {
