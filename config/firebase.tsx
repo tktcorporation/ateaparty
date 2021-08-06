@@ -20,7 +20,7 @@ if (firebase.apps.length === 0) {
 export const FirebaseContext = createContext({});
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export const FirebaseProvider = ({ children }: Props) => {
@@ -29,7 +29,7 @@ export const FirebaseProvider = ({ children }: Props) => {
   useEffect(() => {
     setState({
       perf: firebase.performance(),
-      analytics: firebase.analytics()
+      analytics: firebase.analytics(),
     });
   }, []);
 
