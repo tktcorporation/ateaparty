@@ -13,6 +13,11 @@ export const News: React.FC = () => {
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 1 / 2]} px={[2, 3, 5]} mt={2}>
           <Fade direction="right" triggerOnce>
+            <TwitterTweetEmbed tweetId={"1423580916098551811"} />
+          </Fade>
+        </Box>
+        <Box width={[1, 1, 1 / 2]} px={[2, 3, 5]} mt={2}>
+          <Fade direction="right" triggerOnce>
             <TwitterTweetEmbed tweetId={"1422834615576711168"} />
           </Fade>
         </Box>
