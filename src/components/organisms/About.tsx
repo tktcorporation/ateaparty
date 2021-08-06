@@ -7,6 +7,7 @@ import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
 import { Twemb } from "../molecules/TwitterWidget";
 import Triangle from "../components/Triangle";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -37,7 +38,7 @@ const About: React.FC = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Fade direction="right" triggerOnce>
-            <Twemb twitterHref={"https://twitter.com/ochakai_vrc"}></Twemb>
+            <TwitterTimelineEmbed sourceType={"profile"} screenName={"ochakai_vrc"} noFooter noHeader options={{height: 500}}></TwitterTimelineEmbed>
           </Fade>
         </Box>
       </Flex>
