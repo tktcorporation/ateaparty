@@ -14,7 +14,7 @@ const vision = `## 演奏者に表現の場を
 ## Questの世界に良き音楽を
 `;
 
-const purpose = `「題名のないお茶会」は [VRChat](https://vrchat.com/) というVR空間内で活動する音楽団体です。
+const purpose = `「題名のないお茶会」は [VRChat](https://vrchat.com/) というVR空間内で活動する、演奏愛好家の集いです。
 
 新しい世界で音楽の輪を広げることを目的に活動しています。
 `;

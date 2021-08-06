@@ -14,7 +14,7 @@ new Logo(BASE_URL).symbolUrl;
 const Helmet = ({ theme }: Props) => {
   const { title, description, profile } = {
     title: TITLE,
-    description: "VRChatで活動するクラシックを中心とした音楽団体です",
+    description: "VRChatで活動するクラシックを中心とした演奏愛好家の集いです",
     profile: ((src: string) => ({
       favicon32: { src },
       bigIcon: { src },

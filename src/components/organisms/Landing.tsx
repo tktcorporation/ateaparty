@@ -12,17 +12,9 @@ const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
 const LandingPage = (): JSX.Element => {
   const { roles, deterministic } = {
-    roles: ["あ茶会", "あ茶", "ChangeTheWorld"],
+    roles: ["あ茶会", "あ茶"], // 隠し要素？ "ChangeTheWorld"
     deterministic: true,
   };
-  // const socialLinks: Array<SocialLinkTypes & { invert: boolean }> = [
-  //   {
-  //     name: "Twitter",
-  //     url: "https://twitter.com/ochakai_vrc",
-  //     icon: "twitter",
-  //     invert: false,
-  //   },
-  // ];
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>
@@ -48,13 +40,12 @@ const LandingPage = (): JSX.Element => {
             .sort(() => (deterministic ? 1 : Math.random() - 0.5))
             .map((text) => (
               <Text width={[300, 500]} fontSize={[4, 7]} key={text}>
-                #
                 <a
                   rel="noreferrer"
                   target="_blank"
                   href={`https://twitter.com/hashtag/${text}`}
                 >
-                  {text}
+                  #{text}
                 </a>
               </Text>
             ))}
