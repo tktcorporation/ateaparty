@@ -6,6 +6,7 @@ import Section from "../components/Section";
 import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
 import { Twemb } from "../molecules/TwitterWidget";
+import Triangle from "../components/Triangle";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -19,7 +20,7 @@ const purpose = `「題名のないお茶会」は [VRChat](https://vrchat.com/)
 
 const About: React.FC = () => {
   return (
-    <Section.Container id={SECTION.about}>
+    <Section.Container Background={Background} id={SECTION.about}>
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
@@ -45,3 +46,13 @@ const About: React.FC = () => {
 };
 
 export default About;
+
+const Background = () => (
+  <>
+    <Triangle
+      color="muted"
+      height={["35vh", "80vh"]}
+      width={["95vw", "60vw"]}
+    />
+  </>
+);

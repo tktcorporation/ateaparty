@@ -7,6 +7,7 @@ import Section from "../components/Section";
 import markdownRenderer from "../components/MarkdownRenderer";
 import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { Logo } from "../../domain/Logo";
+import Triangle from "../components/Triangle";
 
 const teapartySunday = `# 毎週 日曜日のお茶会
 毎週日曜日の14時30分からお茶会を開催しています。
@@ -31,7 +32,7 @@ const profile = {
 
 export const Event: React.FC = () => {
   return (
-    <Section.Container id={SECTION.event}>
+    <Section.Container Background={Background} id={SECTION.event}>
       <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
@@ -66,3 +67,21 @@ export const Event: React.FC = () => {
     </Section.Container>
   );
 };
+
+const Background = () => (
+  <>
+    <Triangle
+      color="primary"
+      height={["25vh", "35vh"]}
+      width={["75vw", "60vw"]}
+      position="top-right"
+    />
+    <Triangle
+      color="secondary"
+      height={["20vh", "20vh"]}
+      width={["100vw", "100vw"]}
+      position="bottom-left"
+    />
+  </>
+);
+
