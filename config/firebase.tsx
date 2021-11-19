@@ -26,12 +26,14 @@ interface Props {
 export const FirebaseProvider = ({ children }: Props) => {
   const [state, setState] = useState({});
 
-  useEffect(() => {
-    setState({
-      perf: firebase.performance(),
-      analytics: firebase.analytics(),
-    });
-  }, []);
+  if (process.env.NODE_ENV == 'production') {
+    useEffect(() => {
+      setState({
+        perf: firebase.performance(),
+        analytics: firebase.analytics(),
+      });
+    }, []);
+  }
 
   return (
     <FirebaseContext.Provider value={state}>
