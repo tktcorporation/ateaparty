@@ -1,4 +1,4 @@
-FROM node:15.11.0-buster-slim AS build-env
+FROM node:16.13.0-buster-slim AS build-env
 
 ENV LC_ALL=C.UTF-8
 

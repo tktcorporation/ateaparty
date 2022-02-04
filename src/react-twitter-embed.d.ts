@@ -21,89 +21,80 @@ interface TwitterTweetEmbedProps {
 // import * as React from 'react'
 
 type TwitterTimelineEmbedBaseProps = {
-  options?: any
-  autoHeight?: boolean
-  theme?: 'dark' | 'light'
-  linkColor?: string
-  borderColor?: string
-  noHeader?: boolean
-  noFooter?: boolean
-  noBorders?: boolean
-  noScrollbar?: boolean
-  transparent?: boolean
-  lang?: string
-}
+  options?: unknown;
+  autoHeight?: boolean;
+  theme?: "dark" | "light";
+  linkColor?: string;
+  borderColor?: string;
+  noHeader?: boolean;
+  noFooter?: boolean;
+  noBorders?: boolean;
+  noScrollbar?: boolean;
+  transparent?: boolean;
+  lang?: string;
+};
 
 type TwitterTimelineEmbedProps =
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'profile' | 'likes', screenName: string }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'profile' | 'likes', userId: number }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'list', ownerScreenName: string, slug: string }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'list', id: number }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'collection', id: string }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'url', url: string }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'widget', widgetId: string }
-  | TwitterTimelineEmbedBaseProps & { sourceType: 'timeline', id: string }
-
-
+  | (TwitterTimelineEmbedBaseProps & {
+      sourceType: "profile" | "likes";
+      screenName: string;
+    })
+  | (TwitterTimelineEmbedBaseProps & {
+      sourceType: "profile" | "likes";
+      userId: number;
+    })
+  | (TwitterTimelineEmbedBaseProps & {
+      sourceType: "list";
+      ownerScreenName: string;
+      slug: string;
+    })
+  | (TwitterTimelineEmbedBaseProps & { sourceType: "list"; id: number })
+  | (TwitterTimelineEmbedBaseProps & { sourceType: "collection"; id: string })
+  | (TwitterTimelineEmbedBaseProps & { sourceType: "url"; url: string })
+  | (TwitterTimelineEmbedBaseProps & { sourceType: "widget"; widgetId: string })
+  | (TwitterTimelineEmbedBaseProps & { sourceType: "timeline"; id: string });
 
 type TwitterFollowButtonProps = {
-  screenName: string
-  options?: any
-}
-
-
+  screenName: string;
+  options?: unknown;
+};
 
 type TwitterHashtagButtonProps = {
-  tag: string
-  options?: any
-}
-
-
+  tag: string;
+  options?: unknown;
+};
 
 type TwitterShareButtonProps = {
-  url: string
-  options?: any
-}
-
-
+  url: string;
+  options?: unknown;
+};
 
 type TwitterMentionButtonProps = {
-  screenName: string
-  options?: any
-}
-
-
+  screenName: string;
+  options?: unknown;
+};
 
 type TwitterTweetEmbedProps = {
-  tweetId: string
-  options?: any
-  onLoaded?: (elm: any) => void
-}
-
-
+  tweetId: string;
+  options?: unknown;
+  onLoaded?: (elm: unknown) => void;
+};
 
 type TwitterMomentShareProps = {
-  momentId: string
-  options?: any
-}
-
-
+  momentId: string;
+  options?: unknown;
+};
 
 type TwitterDMButtonProps = {
-  id: number
-  options?: any
-}
-
-
+  id: number;
+  options?: unknown;
+};
 
 type TwitterVideoEmbedProps = {
-  id: string
-}
-
-
+  id: string;
+};
 
 type TwitterOnAirButtonProps = {
-  username: string
-  options?: any
-}
-
+  username: string;
+  options?: unknown;
+};

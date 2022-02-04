@@ -9,7 +9,8 @@
     "format": "prettier -w --write .",
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=5",
     "lint:prettier": "prettier --check .",
-    "test": "jest"
+    "test": "jest",
+    "fix": "yarn format && eslint --fix . && yarn test && yarn build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

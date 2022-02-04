@@ -5,7 +5,6 @@ import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
-import { Twemb } from "../molecules/TwitterWidget";
 import Triangle from "../components/Triangle";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 
@@ -38,7 +37,13 @@ const About: React.FC = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Fade direction="right" triggerOnce>
-            <TwitterTimelineEmbed sourceType={"profile"} screenName={"ochakai_vrc"} noFooter noHeader options={{height: 500}}></TwitterTimelineEmbed>
+            <TwitterTimelineEmbed
+              sourceType={"profile"}
+              screenName={"ochakai_vrc"}
+              noFooter
+              noHeader
+              options={{ height: 500 }}
+            ></TwitterTimelineEmbed>
           </Fade>
         </Box>
       </Flex>
