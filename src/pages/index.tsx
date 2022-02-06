@@ -5,9 +5,6 @@ import Footer from "../components/components/Footer";
 import { Event } from "../components/organisms/Event";
 import Header from "../components/components/Header";
 import { News } from "../components/organisms/News";
-import axios from "axios";
-// import csv-parser
-import { parse } from "csv-parse";
 
 export default function Home(): JSX.Element {
   return (
