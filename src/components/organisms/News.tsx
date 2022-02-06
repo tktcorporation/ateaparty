@@ -10,7 +10,7 @@ import { usePromise } from "react-use";
 import { useState, useEffect } from "react";
 
 interface TweetBoxProps {
-  tweets: Tweet[]
+  tweets: Tweet[];
 }
 const TweetsBox = ({ tweets }: TweetBoxProps) => {
   const tweetsBox = tweets.map((tweet) => (
@@ -18,11 +18,7 @@ const TweetsBox = ({ tweets }: TweetBoxProps) => {
       <TwitterTweetEmbed tweetId={tweet.tweetId} />
     </Fade>
   ));
-  return (
-    <Flex>
-      { tweetsBox }
-    </Flex>
-  );
+  return <Flex>{tweetsBox}</Flex>;
 };
 
 export const News: React.FC = () => {
