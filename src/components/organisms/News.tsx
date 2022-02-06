@@ -1,28 +1,36 @@
 import React from "react";
-import { Box, Flex } from "rebass/styled-components";
+import { Flex } from "rebass/styled-components";
 import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Triangle from "../components/Triangle";
-import { TwitterRepository } from "../../repository/twitterRepository";
-import {usePromise} from "react-use";
-import {useState, useEffect, createElement} from "react";
+import { TwitterRepository, Tweet } from "../../repository/twitterRepository";
+import { usePromise } from "react-use";
+import { useState, useEffect } from "react";
+
+interface TweetBoxProps {
+  tweets: Tweet[]
+}
+const TweetsBox = ({ tweets }: TweetBoxProps) => {
+  const tweetsBox = tweets.map((tweet) => (
+    <Fade direction="right" triggerOnce key={tweet.tweetId}>
+      <TwitterTweetEmbed tweetId={tweet.tweetId} />
+    </Fade>
+  ));
+  return (
+    <Flex>
+      { tweetsBox }
+    </Flex>
+  );
+};
 
 export const News: React.FC = () => {
-  const twitterBoxes = async () => {
-    const tweets = await new TwitterRepository().getAll();
-    return tweets.slice(0).map((tweet) => (
-      <Fade direction="right" triggerOnce key={tweet.tweetId}>
-        <TwitterTweetEmbed tweetId={tweet.tweetId} />
-      </Fade>
-    ));
-  };
   const mounted = usePromise();
-  const [value, setValue] = useState<JSX.Element[]>([]);
+  const [value, setValue] = useState<Tweet[]>([]);
   useEffect(() => {
     (async () => {
-      const value = await mounted(twitterBoxes());
+      const value = await mounted(new TwitterRepository().getAll());
       setValue(value);
     })();
   }, []);
@@ -30,7 +38,7 @@ export const News: React.FC = () => {
     <Section.Container Background={Background} id={SECTION.news}>
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        {value}
+        <TweetsBox tweets={value} />
       </Flex>
     </Section.Container>
   );
