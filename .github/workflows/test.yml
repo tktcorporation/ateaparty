@@ -2,26 +2,18 @@ name: Test
 on: push
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: "16.x"
-      - name: install dependencies
+          node-version: "15.x"
+      - name: install, lint and test, build
         run: |
           npm i -g yarn
           yarn
-      - name: eslint
-        run: |
           yarn lint:eslint
-      - name: format
-        run: |
           yarn lint:prettier
-      - name: test
-        run: |
           yarn test
-      - name: build
-        run: |
           yarn build
