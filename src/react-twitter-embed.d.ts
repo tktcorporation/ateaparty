@@ -1,7 +1,4 @@
 declare module "react-twitter-embed" {
-  // export function TwitterTweetEmbed({
-  //   tweetId,
-  // }: TwitterTweetEmbedProps): JSX.Element;
   export class TwitterTimelineEmbed extends React.Component<TwitterTimelineEmbedProps> {}
   export class TwitterFollowButton extends React.Component<TwitterFollowButtonProps> {}
   export class TwitterHashtagButton extends React.Component<TwitterHashtagButtonProps> {}
@@ -13,12 +10,6 @@ declare module "react-twitter-embed" {
   export class TwitterVideoEmbed extends React.Component<TwitterVideoEmbedProps> {}
   export class TwitterOnAirButton extends React.Component<TwitterOnAirButtonProps> {}
 }
-
-interface TwitterTweetEmbedProps {
-  tweetId: string;
-}
-
-// import * as React from 'react'
 
 type TwitterTimelineEmbedBaseProps = {
   options?: unknown;

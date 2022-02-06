@@ -5,7 +5,13 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
-  plugins: ["@typescript-eslint", "import", "react", "simple-import-sort"],
+  plugins: [
+    "@typescript-eslint",
+    "import",
+    "react",
+    "simple-import-sort",
+    "react-hooks",
+  ],
   rules: {
     // 1: Turn off rules that are no longer necessary in React 17 and in Next.js
     "react/jsx-uses-react": "off",
