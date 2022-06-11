@@ -12,8 +12,7 @@ updates:
     assignees:
       - "tktcorporation"
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: "⬆️"
 
   - package-ecosystem: "github-actions"
     directory: "/"
@@ -22,5 +21,4 @@ updates:
     assignees:
       - "tktcorporation"
     commit-message:
-      prefix: "chore"
-      include: "scope"
+      prefix: "⬆️"
