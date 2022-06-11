@@ -61,12 +61,6 @@ export const Event: React.FC = () => {
 const Background = () => (
   <>
     <Triangle
-      color="primary"
-      height={["25vh", "35vh"]}
-      width={["75vw", "60vw"]}
-      position="top-right"
-    />
-    <Triangle
       color="secondary"
       height={["20vh", "20vh"]}
       width={["100vw", "100vw"]}
