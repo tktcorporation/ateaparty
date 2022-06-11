@@ -1,6 +1,5 @@
 import React from "react";
 import { Flex, Box } from "rebass/styled-components";
-import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import { TwitterTweetEmbed } from "react-twitter-embed";
@@ -24,9 +23,7 @@ export const News: React.FC = () => {
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         {tweets.map((tweet) => (
           <Box width={[1, 1, 1 / 2]} px={[2, 3, 5]} mt={2} key={tweet.tweetId}>
-            <Fade direction="right" triggerOnce>
-              <TwitterTweetEmbed tweetId={tweet.tweetId} />
-            </Fade>
+            <TwitterTweetEmbed tweetId={tweet.tweetId} />
           </Box>
         ))}
       </Flex>

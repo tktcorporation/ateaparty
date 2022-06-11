@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
 import { Heading } from "rebass/styled-components";
-import { Slide } from "react-awesome-reveal";
 import Link from "./Link";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
@@ -30,18 +29,16 @@ type HeaderProps = {
 };
 
 const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
-  <Slide direction="left" triggerOnce>
-    <Heading color="text" mb={4}>
-      <Link selected>
-        {name}
-        {icon && (
-          <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
-            {icon}
-          </span>
-        )}
-      </Link>
-    </Heading>
-  </Slide>
+  <Heading color="text" mb={4}>
+    <Link selected>
+      {name}
+      {icon && (
+        <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
+          {icon}
+        </span>
+      )}
+    </Link>
+  </Heading>
 );
 
 const SectionContainer = styled.div`
