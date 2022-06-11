@@ -29,16 +29,16 @@ type HeaderProps = {
 };
 
 const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
-    <Heading color="text" mb={4}>
-      <Link selected>
-        {name}
-        {icon && (
-          <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
-            {icon}
-          </span>
-        )}
-      </Link>
-    </Heading>
+  <Heading color="text" mb={4}>
+    <Link selected>
+      {name}
+      {icon && (
+        <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
+          {icon}
+        </span>
+      )}
+    </Link>
+  </Heading>
 );
 
 const SectionContainer = styled.div`
