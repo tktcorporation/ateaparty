@@ -1,7 +1,7 @@
 import React, { createContext, useState, useEffect, ReactNode } from "react";
-import firebase from "firebase/app";
-import "firebase/analytics";
-import "firebase/performance";
+import { getApps, initializeApp } from "firebase/app";
+import { getPerformance } from "firebase/performance";
+import { getAnalytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,8 +13,9 @@ const firebaseConfig = {
   measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-if (firebase.apps.length === 0) {
-  firebase.initializeApp(firebaseConfig);
+// initialize firebase
+if (getApps().length === 0) {
+  initializeApp(firebaseConfig);
 }
 
 export const FirebaseContext = createContext({});
@@ -29,8 +30,8 @@ export const FirebaseProvider = ({ children }: Props): JSX.Element => {
   if (process.env.NODE_ENV == "production") {
     useEffect(() => {
       setState({
-        perf: firebase.performance(),
-        analytics: firebase.analytics(),
+        perf: getPerformance(),
+        analytics: getAnalytics(),
       });
     }, []);
   }
