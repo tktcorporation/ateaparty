@@ -1,4 +1,4 @@
-FROM node:16.13.0-buster-slim AS build-env
+FROM node:18.2.0-bullseye-slim AS build-env
 
 ENV LC_ALL=C.UTF-8
 
@@ -8,6 +8,7 @@ RUN apt-get update && \
     git
 
 RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash
+RUN curl -sSL https://bina.egoist.sh/egoist/dum | bash
 
 RUN npm i -g typescript
 RUN npm install -g firebase-tools vercel
@@ -16,8 +17,6 @@ WORKDIR /app
 
 COPY package.json package.json
 COPY yarn.lock yarn.lock
-
-RUN yarn
 
 COPY  . .
 
