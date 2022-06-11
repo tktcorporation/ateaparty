@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Flex } from "rebass/styled-components";
 import ReactMarkdown from "react-markdown";
-import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
@@ -24,27 +23,21 @@ const About: React.FC = () => {
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
-          <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={vision} renderers={markdownRenderer} />
-          </Fade>
-          <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={purpose} renderers={markdownRenderer} />
-          </Fade>
+          <ReactMarkdown source={vision} renderers={markdownRenderer} />
+          <ReactMarkdown source={purpose} renderers={markdownRenderer} />
         </Box>
 
         <Box
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <Fade direction="right" triggerOnce>
-            <TwitterTimelineEmbed
-              sourceType={"profile"}
-              screenName={"ochakai_vrc"}
-              noFooter
-              noHeader
-              options={{ height: 500 }}
-            ></TwitterTimelineEmbed>
-          </Fade>
+          <TwitterTimelineEmbed
+            sourceType={"profile"}
+            screenName={"ochakai_vrc"}
+            noFooter
+            noHeader
+            options={{ height: 500 }}
+          ></TwitterTimelineEmbed>
         </Box>
       </Flex>
     </Section.Container>

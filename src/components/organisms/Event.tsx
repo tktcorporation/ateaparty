@@ -1,7 +1,6 @@
 import React from "react";
 import { Box, Image, Flex } from "rebass/styled-components";
 import ReactMarkdown from "react-markdown";
-import { Fade } from "react-awesome-reveal";
 import Section from "../components/Section";
 // import Triangle from '../components/Triangle';
 import markdownRenderer from "../components/MarkdownRenderer";
@@ -36,32 +35,23 @@ export const Event: React.FC = () => {
       <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <Fade direction="down" triggerOnce>
-            <ReactMarkdown
-              source={teapartySunday}
-              renderers={markdownRenderer}
-            />
-          </Fade>
+          <ReactMarkdown source={teapartySunday} renderers={markdownRenderer} />
         </Box>
 
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <Fade direction="down" triggerOnce>
-            <ReactMarkdown source={miniConcert} renderers={markdownRenderer} />
-          </Fade>
+          <ReactMarkdown source={miniConcert} renderers={markdownRenderer} />
         </Box>
 
         <Box
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <Fade direction="right" triggerOnce>
-            <Image
-              mt={[4, 4, 0]}
-              ml={[0, 0, 1]}
-              src={profile.src}
-              alt={profile.alt}
-            />
-          </Fade>
+          <Image
+            mt={[4, 4, 0]}
+            ml={[0, 0, 1]}
+            src={profile.src}
+            alt={profile.alt}
+          />
         </Box>
       </Flex>
     </Section.Container>
