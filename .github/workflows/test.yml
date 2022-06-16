@@ -1,4 +1,4 @@
-name: Test
+name: Test, automerge(dependabot)
 on:
   push:
   pull_request:
@@ -6,6 +6,10 @@ on:
       - opened
       - reopened
       - ready_for_review
+
+permissions:
+  pull-requests: write
+  contents: write
 
 jobs:
   build-and-test:
@@ -24,14 +28,20 @@ jobs:
           yarn test
           yarn build
 
-  auto-merge:
+  dependabot:
     runs-on: ubuntu-latest
     timeout-minutes: 5
+    if: ${{ github.actor == 'dependabot[bot]' }}
     needs: build-and-test
-    if: ${{ github.event_name == 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+      - name: Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@v1.1.1
         with:
-          target: minor
           github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Enable auto-merge for Dependabot PRs
+        if: ${{ steps.metadata.outputs.update-type == 'version-update:semver-patch' || steps.metadata.outputs.update-type == 'version-update:semver-minor' }}
+        run: gh pr merge --auto --merge "$PR_URL"
+        env:
+          PR_URL: ${{github.event.pull_request.html_url}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
