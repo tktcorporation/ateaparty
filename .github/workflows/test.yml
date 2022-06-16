@@ -1,5 +1,8 @@
 name: Test
-on: push
+on:
+  push:
+  pull_request:
+    types: [opened, ready_for_review]
 
 jobs:
   build-and-test:
@@ -17,3 +20,15 @@ jobs:
           yarn lint:prettier
           yarn test
           yarn build
+
+  auto-merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: build-and-test
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ahmadnassri/action-dependabot-auto-merge@v2
+        with:
+          target: minor
+          github-token: ${{ secrets.GITHUB_TOKEN }}
