@@ -6,6 +6,7 @@ import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
+import StyledReactMarkdown from "../components/MarkdownRenderer";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -23,8 +24,8 @@ const About: React.FC = () => {
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
-          <ReactMarkdown source={vision} renderers={markdownRenderer} />
-          <ReactMarkdown source={purpose} renderers={markdownRenderer} />
+          <StyledReactMarkdown children={vision} />
+          <StyledReactMarkdown children={purpose} />
         </Box>
 
         <Box
