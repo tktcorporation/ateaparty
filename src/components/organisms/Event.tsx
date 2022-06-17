@@ -34,11 +34,11 @@ export const Event: React.FC = () => {
       <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <StyledReactMarkdown children={teapartySunday} />
+          <StyledReactMarkdown>{teapartySunday}</StyledReactMarkdown>
         </Box>
 
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <StyledReactMarkdown children={miniConcert} />
+          <StyledReactMarkdown>{miniConcert}</StyledReactMarkdown>
         </Box>
 
         <Box

@@ -22,8 +22,8 @@ const About: React.FC = () => {
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
-          <StyledReactMarkdown children={vision} className={"mb-5"}/>
-          <StyledReactMarkdown children={purpose} />
+          <StyledReactMarkdown className={"mb-5"}>{vision}</StyledReactMarkdown>
+          <StyledReactMarkdown>{purpose}</StyledReactMarkdown>
         </Box>
 
         <Box

@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
@@ -33,46 +33,40 @@ const StyledLink = styled.a`
   }
 `;
 
-type LinkProps = {
-  href: string;
-  children: ReactNode;
-};
+const components: Parameters<typeof ReactMarkdown>[0]["components"] = {
+  a: ({ href, children, ...props }) => {
+    const isInnerLink = href?.startsWith("#");
 
-const MarkdownLink = ({ href, children }: LinkProps): JSX.Element => {
-  const isInnerLink = href.startsWith("#");
-
-  return isInnerLink ? (
-    <StyledLink href={href}>{children}</StyledLink>
-  ) : (
-    <StyledLink href={href} target="_blank" rel="noreferrer">
+    return isInnerLink ? (
+      <StyledLink href={href} {...props}>
+        {children}
+      </StyledLink>
+    ) : (
+      <StyledLink href={href} target="_blank" rel="noreferrer" {...props}>
+        {children}
+      </StyledLink>
+    );
+  },
+  h1: ({ children, ...props }) => (
+    <h1 {...props} className={"text-xl font-bold"}>
       {children}
-    </StyledLink>
-  );
+    </h1>
+  ),
+  h2: ({ children, ...props }) => (
+    <h2 {...props} className={"text-lg font-bold"}>
+      {children}
+    </h2>
+  ),
 };
-const components: Parameters<typeof ReactMarkdown>[0]["components"] = ({
-    a: ({ href, children, ...props}) => {
-      const isInnerLink = href?.startsWith("#");
-    
-      return isInnerLink ? (
-        <StyledLink href={href} {...props}>{children}</StyledLink>
-      ) : (
-        <StyledLink href={href} target="_blank" rel="noreferrer" {...props}>
-          {children}
-        </StyledLink>
-      );
-    },
-    h1: ({ children, ...props }) => (
-      <h1 {...props} className={"text-xl font-bold"}>
-        {children}
-      </h1>
-    ),
-    h2: ({ children, ...props }) => (
-      <h2 {...props} className={"text-lg font-bold"}>
-        {children}
-      </h2>
-    ),
-})
-const StyledReactMarkdown = ({ children, className }: { children: string, className?: string }) => (
-  <ReactMarkdown children={children} components={components} className={className} />
-)
-export default StyledReactMarkdown
+const StyledReactMarkdown = ({
+  children,
+  className,
+}: {
+  children: string;
+  className?: string;
+}): JSX.Element => (
+  <ReactMarkdown components={components} className={className}>
+    {children}
+  </ReactMarkdown>
+);
+export default StyledReactMarkdown;
