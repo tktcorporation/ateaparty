@@ -1,8 +1,6 @@
 import React from "react";
 import { Box, Flex } from "rebass/styled-components";
-import ReactMarkdown from "react-markdown";
 import Section from "../components/Section";
-import markdownRenderer from "../components/MarkdownRenderer";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
@@ -24,7 +22,7 @@ const About: React.FC = () => {
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
-          <StyledReactMarkdown children={vision} />
+          <StyledReactMarkdown children={vision} className={"mb-5"}/>
           <StyledReactMarkdown children={purpose} />
         </Box>
 

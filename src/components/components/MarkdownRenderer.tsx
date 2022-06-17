@@ -61,8 +61,18 @@ const components: Parameters<typeof ReactMarkdown>[0]["components"] = ({
         </StyledLink>
       );
     },
+    h1: ({ children, ...props }) => (
+      <h1 {...props} className={"text-xl font-bold"}>
+        {children}
+      </h1>
+    ),
+    h2: ({ children, ...props }) => (
+      <h2 {...props} className={"text-lg font-bold"}>
+        {children}
+      </h2>
+    ),
 })
-const StyledReactMarkdown = ({ children }: { children: string }) => (
-  <ReactMarkdown children={children} components={components} />
+const StyledReactMarkdown = ({ children, className }: { children: string, className?: string }) => (
+  <ReactMarkdown children={children} components={components} className={className} />
 )
 export default StyledReactMarkdown
