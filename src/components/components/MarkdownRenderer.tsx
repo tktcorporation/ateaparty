@@ -1,5 +1,5 @@
-import React, { ReactNode } from "react";
-import { Text } from "rebass";
+import React from "react";
+import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
 
 const StyledLink = styled.a`
@@ -33,49 +33,40 @@ const StyledLink = styled.a`
   }
 `;
 
-const Root = styled.div`
-  font-size: large;
-  padding-bottom: 1em;
-  line-height: 2em;
+const components: Parameters<typeof ReactMarkdown>[0]["components"] = {
+  a: ({ href, children, ...props }) => {
+    const isInnerLink = href?.startsWith("#");
 
-  @media (max-width: 600px) {
-    line-height: 1.5em;
-    font-size: medium;
-  }
-`;
-
-const MarkdownParagraph = styled(Text)`
-  padding-bottom: 1em;
-`;
-
-const MarkdownList = styled.ul`
-  margin: 0;
-`;
-
-const MarkdownListItem = styled.li`
-  margin-bottom: 1em;
-`;
-
-type LinkProps = {
-  href: string;
-  children: ReactNode;
-};
-
-const MarkdownLink = ({ href, children }: LinkProps): JSX.Element => {
-  const isInnerLink = href.startsWith("#");
-
-  return isInnerLink ? (
-    <StyledLink href={href}>{children}</StyledLink>
-  ) : (
-    <StyledLink href={href} target="_blank" rel="noreferrer">
+    return isInnerLink ? (
+      <StyledLink href={href} {...props}>
+        {children}
+      </StyledLink>
+    ) : (
+      <StyledLink href={href} target="_blank" rel="noreferrer" {...props}>
+        {children}
+      </StyledLink>
+    );
+  },
+  h1: ({ children, ...props }) => (
+    <h1 {...props} className={"text-xl font-bold"}>
       {children}
-    </StyledLink>
-  );
+    </h1>
+  ),
+  h2: ({ children, ...props }) => (
+    <h2 {...props} className={"text-lg font-bold"}>
+      {children}
+    </h2>
+  ),
 };
-export default {
-  root: Root,
-  paragraph: MarkdownParagraph,
-  list: MarkdownList,
-  listItem: MarkdownListItem,
-  link: MarkdownLink,
-};
+const StyledReactMarkdown = ({
+  children,
+  className,
+}: {
+  children: string;
+  className?: string;
+}): JSX.Element => (
+  <ReactMarkdown components={components} className={className}>
+    {children}
+  </ReactMarkdown>
+);
+export default StyledReactMarkdown;

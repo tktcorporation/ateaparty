@@ -1,12 +1,11 @@
 import React from "react";
 import { Box, Image, Flex } from "rebass/styled-components";
-import ReactMarkdown from "react-markdown";
 import Section from "../components/Section";
 // import Triangle from '../components/Triangle';
-import markdownRenderer from "../components/MarkdownRenderer";
 import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { Logo } from "../../domain/Logo";
 import Triangle from "../components/Triangle";
+import StyledReactMarkdown from "../components/MarkdownRenderer";
 
 const teapartySunday = `# 毎週 日曜日のお茶会
 毎週日曜日の14時30分からお茶会を開催しています。
@@ -35,11 +34,11 @@ export const Event: React.FC = () => {
       <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <ReactMarkdown source={teapartySunday} renderers={markdownRenderer} />
+          <StyledReactMarkdown>{teapartySunday}</StyledReactMarkdown>
         </Box>
 
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
-          <ReactMarkdown source={miniConcert} renderers={markdownRenderer} />
+          <StyledReactMarkdown>{miniConcert}</StyledReactMarkdown>
         </Box>
 
         <Box
