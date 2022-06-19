@@ -7,7 +7,6 @@ RUN apt-get update && \
     curl \
     git
 
-RUN curl https://raw.githubusercontent.com/nektos/act/master/install.sh | bash
 RUN curl -sSL https://bina.egoist.sh/egoist/dum | bash
 
 RUN npm i -g typescript
