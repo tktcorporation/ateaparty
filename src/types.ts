@@ -1,4 +1,3 @@
-import { IconName } from "@fortawesome/fontawesome-svg-core";
 import { DefaultTheme } from "styled-components";
 import { Theme as RebassTheme } from "@rebass/preset";
 
@@ -28,12 +27,6 @@ export type AboutMe = {
   profile: Image;
 };
 
-export type SocialLink = {
-  url: string;
-  name: string;
-  icon: IconName;
-};
-
 export type MediumPost = {
   title: string;
   text: string;
@@ -47,10 +40,4 @@ export type MediumAuthor = {
   id: string;
   name: string;
   username: string;
-};
-
-export type Landing = {
-  name: string;
-  roles: string[];
-  socialLinks: SocialLink[];
 };

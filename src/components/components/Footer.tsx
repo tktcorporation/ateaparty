@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { Text, Box, Flex } from "rebass/styled-components";
-
 import SocialLink from "./SocialLink";
 import { TITLE } from "../utils/constants";
-import { SocialLink as SocialLinkTypes } from "../../types";
 
 const Footer: React.FC = () => {
   const { name, socialLinks } = {
@@ -13,9 +11,9 @@ const Footer: React.FC = () => {
       {
         name: "Twitter",
         url: "https://twitter.com/ochakai_vrc",
-        icon: "twitter",
+        remixiconClassName: "ri-twitter-fill",
       },
-    ] as Array<SocialLinkTypes & { invert: boolean }>,
+    ] as Array<Parameters<typeof SocialLink>[0]>,
   };
 
   return (

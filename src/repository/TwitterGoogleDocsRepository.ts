@@ -6,7 +6,7 @@ export interface Tweet {
   tweetId: string;
 }
 
-export class TwitterRepository {
+export class TwitterGoogleDocsRepository {
   getAll = async (): Promise<Tweet[]> => {
     const url =
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vTQuPJLzyXZYO7bXaSxfbO0MUlFYCBgKmXi541q5RmS5Mtaan-NhJb6_nIEPLywGpGSebPLwskWYnLS/pub?gid=0&single=true&output=csv";

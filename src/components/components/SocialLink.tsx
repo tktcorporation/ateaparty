@@ -2,20 +2,21 @@ import React from "react";
 import { Link } from "rebass/styled-components";
 import Tippy from "@tippy.js/react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SocialLink as SocialLinkType } from "../../types";
-import { getIconDefinition } from "../utils/icons";
+import "remixicon/fonts/remixicon.css";
 
-type Props = SocialLinkType & {
+type Props = {
   invert?: boolean;
+  remixiconClassName: string;
+  name: string;
+  url: string;
 };
 
-const SocialLink = ({ icon, name, url, invert }: Props): JSX.Element | null => {
-  const iconDefinition = getIconDefinition(icon);
-  if (!iconDefinition) {
-    return null;
-  }
-
+const SocialLink = ({
+  remixiconClassName,
+  name,
+  url,
+  invert,
+}: Props): JSX.Element | null => {
   return (
     <Tippy
       content={name}
@@ -30,7 +31,7 @@ const SocialLink = ({ icon, name, url, invert }: Props): JSX.Element | null => {
         rel="noreferrer"
         aria-label={name}
       >
-        <FontAwesomeIcon icon={iconDefinition} title={name} />
+        <i className={remixiconClassName}></i>
       </IconLink>
     </Tippy>
   );
