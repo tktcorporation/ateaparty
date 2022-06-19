@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "rebass/styled-components";
 import Tippy from "@tippy.js/react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "remixicon/fonts/remixicon.css";
 import { SocialLink as SocialLinkType } from "../../types";
 import { getIconDefinition } from "../utils/icons";
 
@@ -30,7 +30,7 @@ const SocialLink = ({ icon, name, url, invert }: Props): JSX.Element | null => {
         rel="noreferrer"
         aria-label={name}
       >
-        <FontAwesomeIcon icon={iconDefinition} title={name} />
+        <i className="ri-twitter-fill"></i>
       </IconLink>
     </Tippy>
   );
