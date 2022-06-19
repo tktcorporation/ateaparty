@@ -37,7 +37,7 @@ const Background = () => (
       color="muted"
       height={["20vh", "20vh"]}
       width={["100vw", "100vw"]}
-      position="bottom-right"
+      position="bottom-left"
     />
   </>
 );
