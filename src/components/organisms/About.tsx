@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Box, Flex } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
+import { TwitterRepository } from "../../repository/TwitterRepository";
+import { usePromise } from "react-use";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -17,6 +19,15 @@ const purpose = `「題名のないお茶会」は [VRChat](https://hello.vrchat
 `;
 
 const About: React.FC = () => {
+  const repository = new TwitterRepository();
+  const mounted = usePromise();
+  const [pinnedTweetID, setValue] = useState<string | undefined>();
+  useEffect(() => {
+    (async () => {
+      const id = await mounted(repository.getPinnedTweetId("ochakai_vrc"));
+      setValue(id);
+    })();
+  }, []);
   return (
     <Section.Container Background={Background} id={SECTION.about}>
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
@@ -25,18 +36,11 @@ const About: React.FC = () => {
           <StyledReactMarkdown className={"mb-5"}>{vision}</StyledReactMarkdown>
           <StyledReactMarkdown>{purpose}</StyledReactMarkdown>
         </Box>
-
         <Box
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <TwitterTimelineEmbed
-            sourceType={"profile"}
-            screenName={"ochakai_vrc"}
-            noFooter
-            noHeader
-            options={{ height: 500 }}
-          ></TwitterTimelineEmbed>
+          {pinnedTweetID && <TwitterTweetEmbed tweetId={pinnedTweetID} />}
         </Box>
       </Flex>
     </Section.Container>

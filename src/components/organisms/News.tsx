@@ -4,7 +4,10 @@ import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import { TwitterTweetEmbed } from "react-twitter-embed";
 import Triangle from "../components/Triangle";
-import { TwitterRepository, Tweet } from "../../repository/twitterRepository";
+import {
+  TwitterGoogleDocsRepository,
+  Tweet,
+} from "../../repository/TwitterGoogleDocsRepository";
 import { usePromise } from "react-use";
 import { useState, useEffect } from "react";
 
@@ -13,7 +16,7 @@ export const News: React.FC = () => {
   const [tweets, setValue] = useState<Tweet[]>([]);
   useEffect(() => {
     (async () => {
-      const tweets = await mounted(new TwitterRepository().getAll());
+      const tweets = await mounted(new TwitterGoogleDocsRepository().getAll());
       setValue(tweets);
     })();
   }, []);
