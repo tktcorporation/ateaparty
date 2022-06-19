@@ -6,5 +6,6 @@ export enum SECTION {
   home = "Home",
   about = "About",
   event = "Event",
+  history = "History",
   news = "News",
 }

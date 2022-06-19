@@ -5,16 +5,18 @@ import Footer from "../components/components/Footer";
 import { Event } from "../components/organisms/Event";
 import Header from "../components/components/Header";
 import { News } from "../components/organisms/News";
+import { History } from "../components/organisms/History";
 
 export default function Home(): JSX.Element {
   return (
     <Layout>
-      <Header></Header>
-      <LandingPage></LandingPage>
-      <About></About>
-      <Event></Event>
-      <News></News>
-      <Footer></Footer>
+      <Header />
+      <LandingPage />
+      <About />
+      <Event />
+      <History />
+      <News />
+      <Footer />
     </Layout>
   );
 }
