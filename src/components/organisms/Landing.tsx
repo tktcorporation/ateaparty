@@ -15,6 +15,7 @@ const LandingPage = (): JSX.Element => {
     roles: ["あ茶会", "あ茶"], // 隠し要素？ "ChangeTheWorld"
     deterministic: true,
   };
+  const hashTagText = roles[0];
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>
@@ -35,21 +36,15 @@ const LandingPage = (): JSX.Element => {
         textAlign="center"
         style={centerHorizontally}
       >
-        <TextLoop interval={5000}>
-          {roles
-            .sort(() => (deterministic ? 1 : Math.random() - 0.5))
-            .map((text) => (
-              <Text width={[300, 500]} fontSize={[4, 7]} key={text}>
-                <a
-                  rel="noreferrer"
-                  target="_blank"
-                  href={`https://twitter.com/hashtag/${text}`}
-                >
-                  #{text}
-                </a>
-              </Text>
-            ))}
-        </TextLoop>
+        <Text width={[300, 500]} fontSize={[4, 7]} key={hashTagText}>
+          <a
+            rel="noreferrer"
+            target="_blank"
+            href={`https://twitter.com/hashtag/${hashTagText}`}
+          >
+            #{hashTagText}
+          </a>
+        </Text>
       </Heading>
 
       <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
