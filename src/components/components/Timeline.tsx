@@ -2,7 +2,7 @@ type TimelineProps = {
   items: ItemProps[];
   className?: string;
 };
-export const Timeline = ({ items, ...props }: TimelineProps) => {
+export const Timeline = ({ items, ...props }: TimelineProps): JSX.Element => {
   let className = "relative border-l border-gray-200 dark:border-gray-700";
   className += props.className ? ` ${props.className}` : "";
   return (
@@ -19,7 +19,7 @@ type ItemProps = {
   header: string;
   children?: React.ReactNode;
 };
-export const Item = ({ label, header, children }: ItemProps) => {
+export const Item = ({ label, header, children }: ItemProps): JSX.Element => {
   return (
     <li className="mb-5 ml-4">
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>

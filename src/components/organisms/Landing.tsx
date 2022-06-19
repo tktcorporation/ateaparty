@@ -1,6 +1,5 @@
 import React from "react";
 import { Heading, Flex, Text } from "rebass/styled-components";
-import TextLoop from "react-text-loop";
 import Section from "../components/Section";
 import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
@@ -11,9 +10,8 @@ import Image from "next/image";
 const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
 const LandingPage = (): JSX.Element => {
-  const { roles, deterministic } = {
-    roles: ["あ茶会", "あ茶"], // 隠し要素？ "ChangeTheWorld"
-    deterministic: true,
+  const { roles } = {
+    roles: ["あ茶会", "あ茶"],
   };
   const hashTagText = roles[0];
 

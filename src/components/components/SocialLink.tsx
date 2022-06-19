@@ -3,19 +3,20 @@ import { Link } from "rebass/styled-components";
 import Tippy from "@tippy.js/react";
 import styled from "styled-components";
 import "remixicon/fonts/remixicon.css";
-import { SocialLink as SocialLinkType } from "../../types";
-import { getIconDefinition } from "../utils/icons";
 
-type Props = SocialLinkType & {
+type Props = {
   invert?: boolean;
+  remixiconClassName: string;
+  name: string;
+  url: string;
 };
 
-const SocialLink = ({ icon, name, url, invert }: Props): JSX.Element | null => {
-  const iconDefinition = getIconDefinition(icon);
-  if (!iconDefinition) {
-    return null;
-  }
-
+const SocialLink = ({
+  remixiconClassName,
+  name,
+  url,
+  invert,
+}: Props): JSX.Element | null => {
   return (
     <Tippy
       content={name}
@@ -30,7 +31,7 @@ const SocialLink = ({ icon, name, url, invert }: Props): JSX.Element | null => {
         rel="noreferrer"
         aria-label={name}
       >
-        <i className="ri-twitter-fill"></i>
+        <i className={remixiconClassName}></i>
       </IconLink>
     </Tippy>
   );
