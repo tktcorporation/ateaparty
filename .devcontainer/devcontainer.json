@@ -22,7 +22,8 @@
     "donjayamanne.githistory",
     "eamodio.gitlens",
     "mhutchie.git-graph",
-    "steoates.autoimport"
+    "steoates.autoimport",
+    "pucelle.run-on-save"
   ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
