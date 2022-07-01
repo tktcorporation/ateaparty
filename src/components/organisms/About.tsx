@@ -1,13 +1,9 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React from "react";
 import { Box, Flex } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
-import { TwitterRepository } from "../../repository/TwitterRepository";
-import { usePromise } from "react-use";
-import SuspenseTwitterTweetEmbed from "../components/Tweet";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を

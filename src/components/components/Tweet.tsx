@@ -1,5 +1,4 @@
 import { TwitterTweetEmbed } from "react-twitter-embed";
-import { usePromise } from "react-use";
 import { TwitterRepository } from "../../repository/TwitterRepository";
 const ACCOUNT_NAME = "ochakai_vrc";
 

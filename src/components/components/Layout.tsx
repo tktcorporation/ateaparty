@@ -1,9 +1,7 @@
-import React, { FC } from "react";
+import React from "react";
 import { Theme } from "@rebass/preset";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import { theme } from "../../theme";
-import Helmet from "./Helmet";
-import type { NextPage } from "next";
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {

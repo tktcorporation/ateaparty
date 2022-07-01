@@ -1,5 +1,4 @@
 import About from "../components/organisms/About";
-import Layout from "../components/components/Layout";
 import LandingPage from "../components/organisms/Landing";
 import Footer from "../components/components/Footer";
 import { Event } from "../components/organisms/Event";
@@ -8,11 +7,9 @@ import { News } from "../components/organisms/News";
 import { History } from "../components/organisms/History";
 import type { NextPage } from "next";
 import Head from "next/head";
-import { BASE_URL, SECTION, TITLE } from "../components/utils/constants";
-import { getSectionHref } from "../components/utils/helpers";
+import { BASE_URL, TITLE } from "../components/utils/constants";
 import { Logo } from "../domain/Logo";
 import { theme } from "../theme";
-import styles from "../styles/Home.module.css";
 
 const Helmet = () => {
   const { title, description, profile } = {
@@ -78,7 +75,7 @@ const Helmet = () => {
 
 const Home: NextPage = () => {
   return (
-    <div className="container">
+    <div className="">
       <Helmet />
       {/* {/* <Layout> */}
 

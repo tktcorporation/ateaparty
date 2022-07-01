@@ -1,6 +1,5 @@
 import React from "react";
-import { withTheme } from "styled-components";
-import { Html, Head, Main, NextScript } from "next/document";
+import { Head } from "next/document";
 import { Logo } from "../../domain/Logo";
 import { BASE_URL, TITLE } from "../utils/constants";
 import { theme } from "../../theme";
