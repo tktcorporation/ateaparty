@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import { Heading } from "rebass/styled-components";
 import Link from "./Link";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
@@ -29,7 +28,7 @@ type HeaderProps = {
 };
 
 const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
-  <Heading color="text" mb={4}>
+  <div className="text-3xl mb-8">
     <Link selected>
       {name}
       {icon && (
@@ -38,7 +37,7 @@ const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
         </span>
       )}
     </Link>
-  </Heading>
+  </div>
 );
 
 const SectionContainer = styled.div`

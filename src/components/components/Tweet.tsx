@@ -40,7 +40,7 @@ const useTweetData = (accountName: string) => {
   return wrapPromise(repository.getPinnedTweetId(accountName));
 };
 
-const SuspenseTwitterTweetEmbed = () => {
+const SuspenseTwitterTweetEmbed = (): JSX.Element => {
   const pinnedTweetID = useTweetData(ACCOUNT_NAME).read();
   return <TwitterTweetEmbed tweetId={pinnedTweetID} />;
 };

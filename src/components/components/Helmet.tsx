@@ -6,7 +6,7 @@ import { theme } from "../../theme";
 
 new Logo(BASE_URL).symbolUrl;
 
-const Helmet = () => {
+const Helmet = (): JSX.Element => {
   const { title, description, profile } = {
     title: TITLE,
     description: "VRChatで活動するクラシックを中心とした演奏愛好家の集いです",

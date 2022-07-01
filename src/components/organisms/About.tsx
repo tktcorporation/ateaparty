@@ -15,8 +15,6 @@ const purpose = `「題名のないお茶会」は [VRChat](https://hello.vrchat
 新しい世界で音楽の輪を広げることを目的に活動しています。
 `;
 
-const Some = React.lazy(() => import("../components/Tweet"));
-
 const About: React.FC = () => {
   return (
     <Section.Container Background={Background} id={SECTION.about}>

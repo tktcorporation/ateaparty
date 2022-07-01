@@ -1,12 +1,10 @@
-import { Heading, Flex, Text } from "rebass/styled-components";
+import { Flex, Text } from "rebass/styled-components";
 import Section from "../components/Section";
 import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 import Image from "next/image";
-
-const centerHorizontally = { marginRight: "auto", marginLeft: "auto" };
 
 const LandingPage = (): JSX.Element => {
   const { roles } = {
@@ -25,14 +23,7 @@ const LandingPage = (): JSX.Element => {
         />
       </Flex>
 
-      <Heading
-        as="h2"
-        color="primary"
-        fontSize={[5, 6]}
-        mb={[5]}
-        textAlign="center"
-        style={centerHorizontally}
-      >
+      <div className="text-center flex flex-col items-center justify-center">
         <Text width={[300, 500]} fontSize={[4, 7]} key={hashTagText}>
           <a
             rel="noreferrer"
@@ -42,7 +33,7 @@ const LandingPage = (): JSX.Element => {
             #{hashTagText}
           </a>
         </Text>
-      </Heading>
+      </div>
 
       <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
     </Section.Container>
