@@ -40,7 +40,7 @@ export const History: React.FC = () => {
       header: "コンサート「雪景色のお茶会」",
     },
     {
-      label: "2020年12月26日",
+      label: "2020年10月17日",
       header: "コンサート「星空のお茶会」",
       children: <p>天文仮想研究所様の1周年記念イベントの一環で開催</p>,
     },
