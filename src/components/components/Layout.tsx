@@ -40,13 +40,13 @@ type Props = {
 // const T: any = ThemeProvider;
 const Layout = ({ children }: Props) => {
   return (
-    <div>
+    <>
       {/* <T theme={theme as Theme}> */}
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
       {/* <Helmet /> */}
       {children}
       {/* </T> */}
-    </div>
+    </>
   );
 };
 

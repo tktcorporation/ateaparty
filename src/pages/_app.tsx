@@ -10,9 +10,9 @@ import { analytics } from "../firebase";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   if (process.env.NODE_ENV == "production") {
-  useEffect(() => {
-    analytics.app.automaticDataCollectionEnabled = true;
-  }, []);
+    useEffect(() => {
+      analytics.app.automaticDataCollectionEnabled = true;
+    }, []);
   }
 
   return <Component {...pageProps} />;

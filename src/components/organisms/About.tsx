@@ -34,9 +34,9 @@ const About: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <Suspense fallback={<div>Loading...</div>}>
+          {/* <Suspense fallback={<div>Loading...</div>}>
             <SuspenseTwitterTweetEmbed />
-          </Suspense>
+          </Suspense> */}
         </Box>
       </Flex>
     </Section.Container>

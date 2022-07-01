@@ -15,8 +15,11 @@ const firebaseConfig = {
 let firebaseApp: FirebaseApp;
 let analytics: Analytics;
 
-
-if (process.env.NODE_ENV == "production" && typeof window !== "undefined" && !getApps().length) {
+if (
+  process.env.NODE_ENV == "production" &&
+  typeof window !== "undefined" &&
+  !getApps().length
+) {
   firebaseApp = initializeApp(firebaseConfig);
   analytics = getAnalytics();
 }
