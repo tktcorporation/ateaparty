@@ -4,6 +4,8 @@ import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
+import SuspenseTwitterTweetEmbed from "../components/Tweet";
+import { Spinner } from "../components/Spinner";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -15,51 +17,7 @@ const purpose = `「題名のないお茶会」は [VRChat](https://hello.vrchat
 新しい世界で音楽の輪を広げることを目的に活動しています。
 `;
 
-import { TwitterTweetEmbed } from "react-twitter-embed";
-import { TwitterRepository } from "../../repository/TwitterRepository";
-const ACCOUNT_NAME = "ochakai_vrc";
-
-const wrapPromise = <T,>(
-  promise: Promise<T>
-): {
-  read(): T;
-} => {
-  let status = "pending";
-  let result: T;
-  const suspender = promise.then(
-    (r) => {
-      status = "success";
-      result = r;
-    },
-    (e) => {
-      status = "error";
-      result = e;
-    }
-  );
-  return {
-    read: () => {
-      console.log(status);
-      if (status === "pending") {
-        throw suspender;
-      } else if (status === "error") {
-        throw result;
-      } else if (status === "success") {
-        return result;
-      }
-      throw new Error("Unexpected status");
-    },
-  };
-};
-
-const useTweetData = (accountName: string) => {
-  const repository = new TwitterRepository();
-  return wrapPromise(repository.getPinnedTweetId(accountName));
-};
-
-// const resource = useTweetData(ACCOUNT_NAME);
-
 const About: React.FC = () => {
-  // const pinnedTweetID = resource.read();
   return (
     <Section.Container Background={Background} id={SECTION.about}>
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
@@ -72,8 +30,8 @@ const About: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <Suspense fallback={<div>Loading...</div>}>
-            {/* <TwitterTweetEmbed tweetId={pinnedTweetID} />; */}
+          <Suspense fallback={<Spinner />}>
+            <SuspenseTwitterTweetEmbed />
           </Suspense>
         </Box>
       </Flex>
