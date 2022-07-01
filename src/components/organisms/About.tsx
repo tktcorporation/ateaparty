@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { Box, Flex } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
-import { TwitterRepository } from "../../repository/TwitterRepository";
-import { usePromise } from "react-use";
+import { SuspendedPinnedTweet } from "../components/PinnedTweet";
+import { Spinner } from "../components/Spinner";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -19,15 +18,6 @@ const purpose = `「題名のないお茶会」は [VRChat](https://hello.vrchat
 `;
 
 const About: React.FC = () => {
-  const repository = new TwitterRepository();
-  const mounted = usePromise();
-  const [pinnedTweetID, setValue] = useState<string | undefined>();
-  useEffect(() => {
-    (async () => {
-      const id = await mounted(repository.getPinnedTweetId("ochakai_vrc"));
-      setValue(id);
-    })();
-  }, []);
   return (
     <Section.Container Background={Background} id={SECTION.about}>
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
@@ -40,7 +30,9 @@ const About: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          {pinnedTweetID && <TwitterTweetEmbed tweetId={pinnedTweetID} />}
+          <Suspense fallback={<Spinner />}>
+            <SuspendedPinnedTweet />
+          </Suspense>
         </Box>
       </Flex>
     </Section.Container>

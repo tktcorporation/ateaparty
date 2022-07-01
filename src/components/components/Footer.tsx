@@ -1,8 +1,9 @@
 import React from "react";
+import { Box, Flex, Text } from "rebass/styled-components";
 import styled from "styled-components";
-import { Text, Box, Flex } from "rebass/styled-components";
-import SocialLink from "./SocialLink";
+import { theme } from "../../theme";
 import { TITLE } from "../utils/constants";
+import SocialLink from "./SocialLink";
 
 const Footer: React.FC = () => {
   const { name, socialLinks } = {
@@ -17,7 +18,12 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <Box p={[2, 3]} backgroundColor="primary" id="footer" as="footer">
+    <Box
+      p={[2, 3]}
+      backgroundColor={`${theme.colors.primary}`}
+      id="footer"
+      as="footer"
+    >
       <FooterContainer>
         <Text fontSize={[2, 3]} color="background">
           <span>{`${name}`}</span>

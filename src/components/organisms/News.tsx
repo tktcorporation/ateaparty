@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Flex, Box } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
@@ -8,27 +8,36 @@ import {
   TwitterGoogleDocsRepository,
   Tweet,
 } from "../../repository/TwitterGoogleDocsRepository";
-import { usePromise } from "react-use";
-import { useState, useEffect } from "react";
+import { createResource } from "../utils/helpers";
+import { Spinner } from "../components/Spinner";
+
+const resource = createResource(new TwitterGoogleDocsRepository().getAll());
+const SuspendedTweets = (): JSX.Element => {
+  const tweets = resource.read();
+  return (
+    <>
+      {tweets.map((tweet: Tweet) => (
+        <Box
+          width={[1, 1, 1 / tweets.length]}
+          px={[2, 3, 5]}
+          mt={2}
+          key={tweet.tweetId}
+        >
+          <TwitterTweetEmbed tweetId={tweet.tweetId} />
+        </Box>
+      ))}
+    </>
+  );
+};
 
 export const News: React.FC = () => {
-  const mounted = usePromise();
-  const [tweets, setValue] = useState<Tweet[]>([]);
-  useEffect(() => {
-    (async () => {
-      const tweets = await mounted(new TwitterGoogleDocsRepository().getAll());
-      setValue(tweets);
-    })();
-  }, []);
   return (
     <Section.Container Background={Background} id={SECTION.news}>
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
-        {tweets.map((tweet) => (
-          <Box width={[1, 1, 1 / 2]} px={[2, 3, 5]} mt={2} key={tweet.tweetId}>
-            <TwitterTweetEmbed tweetId={tweet.tweetId} />
-          </Box>
-        ))}
+        <Suspense fallback={Spinner()}>
+          <SuspendedTweets />
+        </Suspense>
       </Flex>
     </Section.Container>
   );

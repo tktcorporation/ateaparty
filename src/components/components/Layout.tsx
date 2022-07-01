@@ -1,9 +1,5 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import { Theme } from "@rebass/preset";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { theme } from "../../theme";
-import Helmet from "./Helmet";
-import "tippy.js/dist/tippy.css";
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {
@@ -11,40 +7,43 @@ declare module "styled-components" {
   }
 }
 
-const GlobalStyle = createGlobalStyle`
-  *,
-  *::after,
-  *::before {
-    box-sizing: inherit;
-  }
+// const GlobalStyle = createGlobalStyle`
+//   *,
+//   *::after,
+//   *::before {
+//     box-sizing: inherit;
+//   }
 
-  html {
-    scroll-behavior: smooth;
-  }
+//   html {
+//     scroll-behavior: smooth;
+//   }
 
-  body {
-    box-sizing: border-box;
-    margin: 0;
-    width: 100vw;
-    overflow-x: hidden;
-    font-family: ${(props) => props.theme.fonts.body};
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
-  }
-`;
+//   body {
+//     box-sizing: border-box;
+//     margin: 0;
+//     width: 100vw;
+//     overflow-x: hidden;
+//     font-family: ${theme.fonts.body};
+//     background: ${theme.colors.background};
+//     color: ${theme.colors.text};
+//   }
+// `;
 
 type Props = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props): JSX.Element => (
-  <main>
-    <ThemeProvider theme={theme as Theme}>
-      <GlobalStyle />
-      <Helmet />
+// const T: any = ThemeProvider;
+const Layout = ({ children }: Props): JSX.Element => {
+  return (
+    <>
+      {/* <T theme={theme as Theme}> */}
+      {/* <GlobalStyle /> */}
+      {/* <Helmet /> */}
       {children}
-    </ThemeProvider>
-  </main>
-);
+      {/* </T> */}
+    </>
+  );
+};
 
 export default Layout;

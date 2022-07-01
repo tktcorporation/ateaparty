@@ -1,10 +1,10 @@
-import { Colors } from "@rebass/preset";
 import styled from "styled-components";
+import { theme } from "../../theme";
 
 type ResponsiveProp<T> = T[];
 
 type Props = {
-  color: keyof Colors;
+  color: keyof typeof theme["colors"];
   position?: "top-left" | "top-right" | "bottom-left" | "bottom-right";
   width: ResponsiveProp<string>;
   height: ResponsiveProp<string>;
@@ -16,7 +16,7 @@ const Triangle = styled.div<Props>`
   height: 0;
   z-index: -2;
 
-  ${({ theme, color, height, width, position = "top-left" }) => {
+  ${({ color, height, width, position = "top-left" }) => {
     const [y, x] = position.split("-");
 
     return `

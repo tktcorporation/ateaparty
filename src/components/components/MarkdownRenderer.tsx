@@ -1,11 +1,12 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import styled from "styled-components";
+import { theme } from "../../theme";
 
 const StyledLink = styled.a`
   display: inline-block;
   transition: color 250ms, text-shadow 250ms;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${theme.colors.text};
   cursor: pointer;
   position: relative;
   text-decoration: none;
@@ -19,12 +20,12 @@ const StyledLink = styled.a`
     content: "";
     width: 100%;
     height: 3px;
-    background-color: ${({ theme }) => theme.colors.secondary};
+    background-color: ${theme.colors.secondary};
     transition: all 250ms;
   }
 
   &:hover {
-    color: ${({ theme }) => theme.colors.background};
+    color: ${theme.colors.background};
 
     &::after {
       height: 110%;

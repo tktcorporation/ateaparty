@@ -3,6 +3,7 @@ import { Link } from "rebass/styled-components";
 import Tippy from "@tippy.js/react";
 import styled from "styled-components";
 import "remixicon/fonts/remixicon.css";
+import { theme } from "../../theme";
 
 type Props = {
   invert?: boolean;
@@ -39,7 +40,7 @@ const SocialLink = ({
 
 const IconLink = styled(Link)<{ invert?: boolean }>`
   transition: opacity 0.4s;
-  color: ${({ theme, invert }) =>
+  color: ${({ invert }) =>
     invert ? theme.colors.background : theme.colors.primary};
   text-decoration: none;
 

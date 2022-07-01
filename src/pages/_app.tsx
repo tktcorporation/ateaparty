@@ -1,14 +1,15 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import FirebaseProvider from "../../config/firebase";
+import { useEffect } from "react";
+import { analytics } from "../firebase";
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  return (
-    <>
-      <FirebaseProvider>
-        <Component {...pageProps} />
-      </FirebaseProvider>
-    </>
-  );
+  if (process.env.NODE_ENV == "production") {
+    useEffect(() => {
+      analytics.app.automaticDataCollectionEnabled = true;
+    }, []);
+  }
+
+  return <Component {...pageProps} />;
 }
 export default MyApp;

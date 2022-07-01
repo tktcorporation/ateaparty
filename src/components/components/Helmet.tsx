@@ -1,17 +1,12 @@
 import React from "react";
-import { withTheme } from "styled-components";
-import { Theme } from "../../types";
-import Head from "next/head";
+import { Head } from "next/document";
 import { Logo } from "../../domain/Logo";
 import { BASE_URL, TITLE } from "../utils/constants";
-
-type Props = {
-  theme: Theme;
-};
+import { theme } from "../../theme";
 
 new Logo(BASE_URL).symbolUrl;
 
-const Helmet = ({ theme }: Props) => {
+const Helmet = (): JSX.Element => {
   const { title, description, profile } = {
     title: TITLE,
     description: "VRChatで活動するクラシックを中心とした演奏愛好家の集いです",
@@ -77,4 +72,4 @@ const Helmet = ({ theme }: Props) => {
     </Head>
   );
 };
-export default withTheme(Helmet);
+export default Helmet;
