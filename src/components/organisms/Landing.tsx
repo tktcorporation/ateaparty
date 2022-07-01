@@ -1,4 +1,3 @@
-import React from "react";
 import { Heading, Flex, Text } from "rebass/styled-components";
 import Section from "../components/Section";
 import ScrollIcon from "../components/ScrollIcon";

@@ -6,17 +6,21 @@ import { Event } from "../components/organisms/Event";
 import Header from "../components/components/Header";
 import { News } from "../components/organisms/News";
 import { History } from "../components/organisms/History";
+import type { NextPage } from "next";
 
-export default function Home(): JSX.Element {
+const Home: NextPage = () => {
   return (
-    <Layout>
-      <Header />
-      <LandingPage />
-      <About />
-      <Event />
-      <History />
-      <News />
-      <Footer />
-    </Layout>
+    <div className="container">
+      <Layout>
+        <Header />
+        <LandingPage />
+        <About />
+        <Event />
+        <History />
+        <News />
+        <Footer />
+      </Layout>
+    </div>
   );
-}
+};
+export default Home;

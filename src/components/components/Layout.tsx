@@ -1,9 +1,10 @@
-import React, { ReactNode } from "react";
+import React, { FC } from "react";
 import { Theme } from "@rebass/preset";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import Helmet from "./Helmet";
 import "tippy.js/dist/tippy.css";
+import type { NextPage } from "next";
 
 declare module "styled-components" {
   export interface DefaultTheme extends Theme {
@@ -11,7 +12,7 @@ declare module "styled-components" {
   }
 }
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle: any = createGlobalStyle`
   *,
   *::after,
   *::before {
@@ -34,17 +35,20 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 type Props = {
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
-const Layout = ({ children }: Props): JSX.Element => (
-  <main>
-    <ThemeProvider theme={theme as Theme}>
-      <GlobalStyle />
-      <Helmet />
-      {children}
-    </ThemeProvider>
-  </main>
-);
+const T: any = ThemeProvider;
+const Layout = ({ children }: Props) => {
+  return (
+    <div>
+      <T theme={theme as Theme}>
+        <GlobalStyle />
+        <Helmet />
+        {children}
+      </T>
+    </div>
+  );
+};
 
 export default Layout;
