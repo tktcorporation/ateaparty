@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../theme";
 
 type Props = {
   selected?: boolean;
@@ -13,7 +14,7 @@ const Link = styled.a<Props>`
   padding-bottom: 5px;
   color: inherit;
   font-weight: 600;
-  ${({ selected, theme }) =>
+  ${({ selected }) =>
     selected && `border-bottom:  5px solid ${theme.colors.primary}`};
   transition: 0.4s;
   cursor: ${({ onClick, href }) => (onClick || href ? "pointer" : "default")};
@@ -24,7 +25,7 @@ const Link = styled.a<Props>`
     right: 0;
     width: 0;
     bottom: -5px;
-    background: ${({ theme }) => theme.colors.secondary};
+    background: ${theme.colors.secondary};
     height: 5px;
     transition-property: width;
     transition-duration: 0.3s;

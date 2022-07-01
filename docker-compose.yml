@@ -1,11 +1,13 @@
 version: "3.7"
 services:
   app:
-    command: /bin/bash -c "yarn && yarn dev"
+    command: /bin/bash -c "dum i && dum dev"
     build: .
     working_dir: /app
     volumes:
       - .:/app
     tty: true
+    environment:
+      - NEXT_API_LOCAL_URL=http://app:3000
     ports:
       - 3000:3000

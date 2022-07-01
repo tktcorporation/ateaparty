@@ -7,6 +7,7 @@ import { capitalize } from "../utils/string";
 import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 import { Logo } from "../../domain/Logo";
+import { theme } from "../../theme";
 
 const props = {
   profile: {
@@ -62,7 +63,7 @@ const StyledHeadroom = styled(Headroom)`
   }
 
   .headroom--pinned {
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${theme.colors.primary};
   }
 
   position: absolute;
