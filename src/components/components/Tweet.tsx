@@ -8,7 +8,7 @@ const wrapPromise = <T,>(
   read(): T;
 } => {
   let status = "pending";
-  let result: T | undefined;
+  let result: T;
   const suspender = promise.then(
     (r) => {
       status = "success";
@@ -20,17 +20,16 @@ const wrapPromise = <T,>(
     }
   );
   return {
-    read() {
-      //console.log(status);
+    read: () => {
+      console.log(status);
       if (status === "pending") {
         throw suspender;
+      } else if (status === "error") {
+        throw result;
       } else if (status === "success") {
-        if (result === undefined) {
-          throw result;
-        }
         return result;
       }
-      throw result;
+      throw new Error("Unexpected status");
     },
   };
 };
@@ -42,6 +41,8 @@ const useTweetData = (accountName: string) => {
 
 const SuspenseTwitterTweetEmbed = (): JSX.Element => {
   const pinnedTweetID = useTweetData(ACCOUNT_NAME).read();
+  const repository = new TwitterRepository();
+  console.log("getPinnedTweetId", repository.getPinnedTweetId(ACCOUNT_NAME));
   return <TwitterTweetEmbed tweetId={pinnedTweetID} />;
 };
 
