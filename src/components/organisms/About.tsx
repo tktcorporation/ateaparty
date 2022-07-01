@@ -4,7 +4,7 @@ import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
-import SuspenseTwitterTweetEmbed from "../components/Tweet";
+import { SuspendedPinnedTweet } from "../components/PinnedTweet";
 import { Spinner } from "../components/Spinner";
 
 const vision = `## 演奏者に表現の場を
@@ -31,7 +31,7 @@ const About: React.FC = () => {
           style={{ maxWidth: "500px", margin: "auto" }}
         >
           <Suspense fallback={<Spinner />}>
-            <SuspenseTwitterTweetEmbed />
+            <SuspendedPinnedTweet />
           </Suspense>
         </Box>
       </Flex>

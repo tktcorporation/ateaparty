@@ -9,9 +9,7 @@ const useTweetData = (accountName: string) => {
 };
 
 const resource = useTweetData(ACCOUNT_NAME);
-const SuspenseTwitterTweetEmbed = (): JSX.Element => {
+export const SuspendedPinnedTweet = (): JSX.Element => {
   const pinnedTweetID = resource.read();
   return <TwitterTweetEmbed tweetId={pinnedTweetID} />;
 };
-
-export default SuspenseTwitterTweetEmbed;
