@@ -11,7 +11,7 @@ import type { NextPage } from "next";
 const Home: NextPage = () => {
   return (
     <div className="container">
-      <Layout>
+      {/* {/* <Layout> */}
         <Header />
         <LandingPage />
         <About />
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
         <History />
         <News />
         <Footer />
-      </Layout>
+      {/* </Layout> */} */}
     </div>
   );
 };

@@ -3,7 +3,6 @@ import { Theme } from "@rebass/preset";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { theme } from "../../theme";
 import Helmet from "./Helmet";
-import "tippy.js/dist/tippy.css";
 import type { NextPage } from "next";
 
 declare module "styled-components" {
@@ -28,9 +27,9 @@ const GlobalStyle: any = createGlobalStyle`
     margin: 0;
     width: 100vw;
     overflow-x: hidden;
-    font-family: ${(props) => props.theme.fonts.body};
-    background: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
+    font-family: ${theme.fonts.body};
+    background: ${theme.colors.background};
+    color: ${theme.colors.text};
   }
 `;
 
@@ -38,15 +37,15 @@ type Props = {
   children: React.ReactNode;
 };
 
-const T: any = ThemeProvider;
+// const T: any = ThemeProvider;
 const Layout = ({ children }: Props) => {
   return (
     <div>
-      <T theme={theme as Theme}>
-        <GlobalStyle />
-        <Helmet />
-        {children}
-      </T>
+      {/* <T theme={theme as Theme}> */}
+      {/* <GlobalStyle /> */}
+      {/* <Helmet /> */}
+      {children}
+      {/* </T> */}
     </div>
   );
 };

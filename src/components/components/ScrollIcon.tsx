@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+import { theme } from "../../theme";
 
 type Props = {
   href: string;
@@ -57,7 +58,7 @@ const ScrollAnimation = keyframes`
 
 const Mouse = styled.rect`
   transition: stroke 0.4s;
-  stroke: ${({ theme }) => theme.colors.primary};
+  stroke: ${theme.colors.primary};
   stroke-width: 3;
 `;
 
@@ -69,7 +70,7 @@ const Scroll = styled.circle`
   animation-iteration-count: infinite;
   transform-origin: 50% 20.5px;
   will-change: transform;
-  fill: ${({ theme }) => theme.colors.primary};
+  fill: ${theme.colors.primary};
 `;
 
 export default ScrollIcon;
