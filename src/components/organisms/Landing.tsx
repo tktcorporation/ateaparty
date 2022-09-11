@@ -1,10 +1,10 @@
-import { Flex, Text } from "rebass/styled-components";
 import Section from "../components/Section";
 import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
-import { SECTION } from "../utils/constants";
+import { SECTION, BASE_URL } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 import Image from "next/image";
+import { Logo } from "../../domain/Logo";
 
 const LandingPage = (): JSX.Element => {
   const { roles } = {
@@ -14,27 +14,40 @@ const LandingPage = (): JSX.Element => {
 
   return (
     <Section.Container id={SECTION.home} Background={Background}>
-      <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-        <Image
-          src="/logo_yokogumi.svg"
-          alt="Ateapaty Logo"
-          width={1200}
-          height={300}
-        />
-      </Flex>
-
-      <div className="text-center flex flex-col items-center justify-center">
-        <Text width={[300, 500]} fontSize={[4, 7]} key={hashTagText}>
-          <a
-            rel="noreferrer"
-            target="_blank"
-            href={`https://twitter.com/hashtag/${hashTagText}`}
-          >
-            #{hashTagText}
-          </a>
-        </Text>
+      <div className="flex flex-col">
+        <div className="flex flex-row justify-center">
+          <div className="basis-1/4 md:basis-1/6">
+            <Image
+              src={new Logo(BASE_URL).pcQuestIconUrl({ isPath: true })}
+              alt="PC Quest 対応"
+              layout="responsive"
+              width={120}
+              height={60}
+              style={{ verticalAlign: "middle" }}
+              className="flex-auto"
+            />
+          </div>
+        </div>
+        <div>
+          <Image
+            src="/logo_yokogumi.svg"
+            alt="Ateapaty Logo"
+            width={1200}
+            height={300}
+          />
+        </div>
+        <div className="text-center flex items-center justify-center">
+          <div className="text-2xl md:text-6xl">
+            <a
+              rel="noreferrer"
+              target="_blank"
+              href={`https://twitter.com/hashtag/${hashTagText}`}
+            >
+              #{hashTagText}
+            </a>
+          </div>
+        </div>
       </div>
-
       <ScrollIcon href={`#${getSectionHref(SECTION.about)}`} />
     </Section.Container>
   );

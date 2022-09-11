@@ -1,15 +1,16 @@
 import React from "react";
-import { Flex } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import { Timeline } from "../components/Timeline";
+import { TwitterTweetEmbed } from "react-twitter-embed";
 
 export const History: React.FC = () => {
   const items = [
     {
-      label: "2022年8月?日",
-      header: "？？？？",
+      label: "2022年8月28日",
+      header: "コンサート「夏が終わるお茶会【再】」",
+      children: <TwitterTweetEmbed tweetId={"1564443820968017920"} />,
     },
     {
       label: "2021年12月19日",
@@ -54,19 +55,19 @@ export const History: React.FC = () => {
       header: "あの子゜がお茶菓子を持ち寄るお茶会を開催",
     },
   ];
-  const firstHalfItems = items.slice(0, Math.floor(items.length / 2));
-  const secondHalfItems = items.slice(Math.floor(items.length / 2));
+  const firstHalfItems = items.slice(0, 1);
+  const secondHalfItems = items.slice(1);
   return (
     <Section.Container Background={Background} id={SECTION.history}>
       <Section.Header name={"これまでの歩み"} icon="🦶" label="leg" />
-      <Flex flexWrap="wrap" justifyContent="center" alignItems="center">
-        <Flex width={[1, 1 / 2]} px={[0, 0, 0, 0, 3]}>
+      <div className="flex flex-row flex-wrap items-center mt-8">
+        <div className="basis-full md:basis-1/2">
           <Timeline items={firstHalfItems} />
-        </Flex>
-        <Flex width={[1, 1 / 2]} px={[0, 0, 0, 0, 3]}>
+        </div>
+        <div className="basis-full md:basis-1/2">
           <Timeline items={secondHalfItems} />
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     </Section.Container>
   );
 };
