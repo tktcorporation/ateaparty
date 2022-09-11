@@ -15,6 +15,10 @@ const props = {
       alt: TITLE,
       src: new Logo(BASE_URL).symbolUrl({ isPath: true, ext: "svg" }),
     },
+    pcQuestIcon: {
+      alt: "PC Quest 対応",
+      src: new Logo(BASE_URL).pcQuestIconUrl({ isPath: true }),
+    },
   },
 };
 
