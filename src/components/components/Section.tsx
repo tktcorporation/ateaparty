@@ -1,6 +1,5 @@
 import React, { ReactNode } from "react";
 import styled from "styled-components";
-import Link from "./Link";
 import { SECTION } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 
@@ -29,14 +28,14 @@ type HeaderProps = {
 
 const Header = ({ name, icon, label }: HeaderProps): JSX.Element => (
   <div className="text-3xl mb-8">
-    <Link selected>
+    <span className="border-b-4 border-primary pb-1">
       {name}
       {icon && (
         <span role="img" aria-label={label} style={{ marginLeft: "10px" }}>
           {icon}
         </span>
       )}
-    </Link>
+    </span>
   </div>
 );
 
