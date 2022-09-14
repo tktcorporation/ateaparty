@@ -35,7 +35,7 @@
   "devDependencies": {
     "@types/axios": "0.14.0",
     "@types/jest": "26.0.24",
-    "@types/react": "18.0.19",
+    "@types/react": "18.0.20",
     "@types/react-headroom": "2.2.2",
     "@types/react-helmet": "6.1.5",
     "@types/rebass": "4.0.10",
