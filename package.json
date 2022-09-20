@@ -41,7 +41,7 @@
     "@types/rebass": "4.0.10",
     "@typescript-eslint/eslint-plugin": "5.38.0",
     "@typescript-eslint/parser": "4.33.0",
-    "autoprefixer": "^10.4.10",
+    "autoprefixer": "^10.4.11",
     "depcheck": "1.4.3",
     "eslint": "7.32.0",
     "eslint-config-prettier": "8.5.0",
