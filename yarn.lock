@@ -1570,10 +1570,10 @@
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.5.tgz#5f19d2b85a98e9558036f6a3cacc8819420f05cf"
   integrity sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==
 
-"@types/react-headroom@2.2.2":
-  version "2.2.2"
-  resolved "https://registry.yarnpkg.com/@types/react-headroom/-/react-headroom-2.2.2.tgz#a6c0fa68025db2b038497f1e3362676ecdd6968b"
-  integrity sha512-gSdmlTv8CjM3d6nMyJHrHjmxzYdoQwacjWwM/2Wlw/c+e+I0M4mPSLxnIUL6dGm/c7j/74ei9aJIljZur2pPJQ==
+"@types/react-headroom@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@types/react-headroom/-/react-headroom-3.2.0.tgz#8d6ae82f5b647581533c3e640d42d85120ea00af"
+  integrity sha512-ihs02xvfXg8wLFCsxgi9I3Q+p0s1SajzJxuwdF6/cL//+dZ4F9Bwn3b5EpTYkXelEMDFa055sIq/yxKHRNjfuw==
   dependencies:
     "@types/react" "*"
 
