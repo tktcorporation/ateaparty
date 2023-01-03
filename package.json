@@ -44,7 +44,7 @@
     "autoprefixer": "^10.4.13",
     "depcheck": "1.4.3",
     "eslint": "8.31.0",
-    "eslint-config-prettier": "8.5.0",
+    "eslint-config-prettier": "8.6.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-react": "7.31.11",
     "eslint-plugin-simple-import-sort": "8.0.0",
