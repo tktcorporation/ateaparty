@@ -5438,10 +5438,10 @@ remark-rehype@^10.0.0:
     mdast-util-to-hast "^12.1.0"
     unified "^10.0.0"
 
-remixicon@^2.5.0:
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/remixicon/-/remixicon-2.5.0.tgz#b5e245894a1550aa23793f95daceadbf96ad1a41"
-  integrity sha512-q54ra2QutYDZpuSnFjmeagmEiN9IMo56/zz5dDNitzKD23oFRw77cWo4TsrAdmdkPiEn8mxlrTqxnkujDbEGww==
+remixicon@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/remixicon/-/remixicon-3.0.0.tgz#275e6e39ab318600be4960e91e06ff195f2c681c"
+  integrity sha512-dxmXeeKlfnjLH7gmEm3+qcZnizbmyGfNEx38qHQk6dDFYt/zg78ZjSSOdE69w8gAdlfPDxRwny+hn+JQsNSo9A==
 
 require-directory@^2.1.1:
   version "2.1.1"
