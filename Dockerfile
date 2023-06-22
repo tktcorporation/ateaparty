@@ -7,9 +7,7 @@ RUN apt-get update && \
     curl \
     git
 
-RUN curl -sSL https://bina.egoist.sh/egoist/dum | bash
-
-RUN npm i -g typescript
+RUN npm i -g typescript @antfu/ni
 RUN npm install -g firebase-tools vercel
 
 WORKDIR /app
@@ -19,4 +17,4 @@ COPY yarn.lock yarn.lock
 
 COPY  . .
 
-CMD [ "/bin/bash", "-c", "yarn && yarn build" ]
+CMD [ "/bin/bash", "-c", "ni && nr build" ]
