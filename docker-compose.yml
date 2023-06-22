@@ -1,7 +1,7 @@
 version: "3.7"
 services:
   app:
-    command: /bin/bash -c "dum i && dum dev"
+    command: /bin/bash -c "ni && nr dev"
     build: .
     working_dir: /app
     volumes:
