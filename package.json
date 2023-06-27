@@ -39,7 +39,7 @@
     "@types/react-headroom": "3.2.0",
     "@types/react-helmet": "6.1.6",
     "@types/rebass": "4.0.10",
-    "@typescript-eslint/eslint-plugin": "5.60.0",
+    "@typescript-eslint/eslint-plugin": "5.60.1",
     "@typescript-eslint/parser": "5.60.1",
     "autoprefixer": "^10.4.14",
     "depcheck": "1.4.3",
