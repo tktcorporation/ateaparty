@@ -40,7 +40,7 @@
     "@types/react-helmet": "6.1.6",
     "@types/rebass": "4.0.10",
     "@typescript-eslint/eslint-plugin": "5.61.0",
-    "@typescript-eslint/parser": "5.60.1",
+    "@typescript-eslint/parser": "5.61.0",
     "autoprefixer": "^10.4.14",
     "depcheck": "1.4.3",
     "eslint": "8.44.0",
