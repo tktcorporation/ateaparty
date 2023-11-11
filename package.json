@@ -15,7 +15,7 @@
   "dependencies": {
     "@rebass/preset": "4.0.5",
     "@tippy.js/react": "3.1.1",
-    "axios": "1.4.0",
+    "axios": "1.6.0",
     "babel-plugin-styled-components": "2.1.4",
     "comma-separated-values": "3.6.4",
     "firebase": "9.23.0",
