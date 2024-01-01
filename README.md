@@ -4,15 +4,9 @@
 
 ## Prerequirements
 
--   Docker, docker-compose
+- Docker, docker-compose
 
 ## Get Started
-
-### Env Vars
-
-1. `cp -p .envrc.sample .envrc` and set variables.
-1. Install [direnv](https://github.com/direnv/direnv).
-1. `direnv allow`
 
 ### Develop
 
@@ -21,7 +15,7 @@
 #### Test
 
 ```bash
-RUST_BACKTRACE=1 cargo test
+yarn test
 ```
 
 #### Linter, Formatter
@@ -36,14 +30,4 @@ yarn lint
 
 ```bash
 yarn format
-```
-
-##### Task Runner
-
-[act](https://github.com/nektos/act) can use as a task runner in this project.  
-But, it takes longer than `yarn` commands.
-
-```bash
-# lint, format(check), test
-act
 ```
