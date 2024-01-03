@@ -1,7 +1,4 @@
 import React from "react";
-import { Box, Flex, Text } from "rebass/styled-components";
-import styled from "styled-components";
-import { theme } from "../../theme";
 import { TITLE } from "../utils/constants";
 import SocialLink from "./SocialLink";
 
@@ -18,44 +15,25 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <Box
-      p={[2, 3]}
-      backgroundColor={`${theme.colors.primary}`}
+    <footer
+      className={`p-2 md:p-3 bg-primary`}
       id="footer"
-      as="footer"
     >
-      <FooterContainer>
-        <Text fontSize={[2, 3]} color="background">
-          <span>{`${name}`}</span>
-        </Text>
+      <div className="max-w-screen-lg flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-base md:text-lg text-background">
+          <span>{name}</span>
+        </p>
 
-        <Flex>
+        <div className="flex">
           {socialLinks.map((sl) => (
-            <Box mx={[2, 3]} fontSize={[4, 5]} key={sl.name}>
+            <div className="mx-2 md:mx-3 text-xl md:text-2xl" key={sl.name}>
               <SocialLink {...sl} invert />
-            </Box>
+            </div>
           ))}
-        </Flex>
-      </FooterContainer>
-    </Box>
+        </div>
+      </div>
+    </footer>
   );
 };
-
-const FooterContainer = styled.div`
-  max-width: 1366px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: auto;
-
-  @media (max-width: 400px) {
-    flex-direction: column-reverse;
-
-    & > * {
-      margin-bottom: 10px;
-    }
-  }
-`;
 
 export default Footer;
