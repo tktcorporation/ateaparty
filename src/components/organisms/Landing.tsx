@@ -3,7 +3,7 @@ import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
 import { SECTION, BASE_URL } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { Logo } from "../../domain/Logo";
 
 const LandingPage = (): JSX.Element => {
@@ -20,12 +20,15 @@ const LandingPage = (): JSX.Element => {
             <Image
               src={new Logo(BASE_URL).pcQuestIconUrl({ isPath: true })}
               alt="PC Quest 対応"
-              layout="responsive"
               width={120}
               height={60}
-              style={{ verticalAlign: "middle" }}
               className="flex-auto"
-            />
+              sizes="100vw"
+              style={{
+                verticalAlign: "middle",
+                width: "100%",
+                height: "auto"
+              }} />
           </div>
         </div>
         <div>
@@ -34,7 +37,10 @@ const LandingPage = (): JSX.Element => {
             alt="Ateapaty Logo"
             width={1200}
             height={300}
-          />
+            style={{
+              maxWidth: "100%",
+              height: "auto"
+            }} />
         </div>
         <div className="text-center flex items-center justify-center">
           <div className="text-2xl md:text-6xl">
