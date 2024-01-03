@@ -12,7 +12,7 @@ type ErrorResponse = {
 
 export default async (
   req: NextApiRequest,
-  res: NextApiResponse<Data | ErrorResponse>
+  res: NextApiResponse<Data | ErrorResponse>,
 ): Promise<void> => {
   res.status(200).json({ data: {} });
 };

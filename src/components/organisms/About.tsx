@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Box, Flex } from "rebass/styled-components";
+import { Box } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
@@ -21,7 +21,7 @@ const About: React.FC = () => {
   return (
     <Section.Container Background={Background} id={SECTION.about}>
       <Section.Header name={"「題名のないお茶会」"} icon="" label="title" />
-      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <div className="flex flex-row justify-center items-center flex-wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 4]} mt={2}>
           <StyledReactMarkdown className={"mb-5"}>{vision}</StyledReactMarkdown>
           <StyledReactMarkdown>{purpose}</StyledReactMarkdown>
@@ -34,7 +34,7 @@ const About: React.FC = () => {
             <SuspendedPinnedTweet />
           </Suspense>
         </Box>
-      </Flex>
+      </div>
     </Section.Container>
   );
 };

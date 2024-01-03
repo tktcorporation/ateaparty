@@ -8,20 +8,30 @@
 
 ## Get Started
 
-### Env Vars
-
-1. `cp -p .envrc.sample .envrc` and set variables.
-1. Install [direnv](https://github.com/direnv/direnv).
-1. `direnv allow`
-
 ### Develop
 
-1. `docker-compose run app /bin/bash`
+1. Run `docker compose` to start the development environment
+
+```bash
+docker compose run --service-ports app /bin/bash
+```
+
+1. Install dependencies
+
+```bash
+ni
+```
+
+1. Start the development server
+
+```bash
+nr dev
+```
 
 #### Test
 
 ```bash
-RUST_BACKTRACE=1 cargo test
+yarn test
 ```
 
 #### Linter, Formatter
@@ -38,12 +48,6 @@ yarn lint
 yarn format
 ```
 
-##### Task Runner
+## Deploy
 
-[act](https://github.com/nektos/act) can use as a task runner in this project.  
-But, it takes longer than `yarn` commands.
-
-```bash
-# lint, format(check), test
-act
-```
+Deploying to Vercel is done automatically when pushing to the main branch.

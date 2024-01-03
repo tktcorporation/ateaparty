@@ -20,11 +20,15 @@ const LandingPage = (): JSX.Element => {
             <Image
               src={new Logo(BASE_URL).pcQuestIconUrl({ isPath: true })}
               alt="PC Quest 対応"
-              layout="responsive"
               width={120}
               height={60}
-              style={{ verticalAlign: "middle" }}
               className="flex-auto"
+              sizes="100vw"
+              style={{
+                verticalAlign: "middle",
+                width: "100%",
+                height: "auto",
+              }}
             />
           </div>
         </div>
@@ -34,6 +38,10 @@ const LandingPage = (): JSX.Element => {
             alt="Ateapaty Logo"
             width={1200}
             height={300}
+            style={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
           />
         </div>
         <div className="text-center flex items-center justify-center">
