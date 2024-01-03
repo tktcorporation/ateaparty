@@ -1,34 +1,10 @@
 import React, { Suspense } from "react";
-import { Box } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
-import { TwitterTweetEmbed } from "react-twitter-embed";
-import Triangle from "../components/Triangle";
-import {
-  TwitterGoogleDocsRepository,
-  Tweet,
-} from "../../repository/TwitterGoogleDocsRepository";
-import { createResource } from "../utils/helpers";
-import { Spinner } from "../components/Spinner";
 
-const resource = createResource(new TwitterGoogleDocsRepository().getAll());
-const SuspendedTweets = (): JSX.Element => {
-  const tweets = resource.read();
-  return (
-    <>
-      {tweets.map((tweet: Tweet) => (
-        <Box
-          width={[1, 1, 1 / tweets.length]}
-          px={[2, 3, 5]}
-          mt={2}
-          key={tweet.tweetId}
-        >
-          <TwitterTweetEmbed tweetId={tweet.tweetId} />
-        </Box>
-      ))}
-    </>
-  );
-};
+import Triangle from "../components/Triangle";
+import { Spinner } from "../components/Spinner";
+import { SuspendedTweets } from "../molecules/SuspendedTweets";
 
 export const News: React.FC = () => {
   return (

@@ -3,14 +3,24 @@ import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import { Timeline } from "../components/Timeline";
-import { TwitterTweetEmbed } from "react-twitter-embed";
 
 export const History: React.FC = () => {
-  const items = [
+  const items: {
+    label: string;
+    header: string;
+    children?: React.ReactNode;
+  }[] = [
+    {
+      label: "2023年8月26日",
+      header: "コンサート「響け！夏空のお茶会」",
+    },
+    {
+      label: "2023年2月18日",
+      header: "コンサート「涙と絶望のコンサート」",
+    },
     {
       label: "2022年8月28日",
       header: "コンサート「夏が終わるお茶会【再】」",
-      children: <TwitterTweetEmbed tweetId={"1564443820968017920"} />,
     },
     {
       label: "2021年12月19日",
@@ -23,7 +33,6 @@ export const History: React.FC = () => {
     {
       label: "2021年6月20日",
       header: "第1回ミニコンサート",
-      children: <p>以降、2ヶ月に一度の頻度で定期開催</p>,
     },
     {
       label: "2021年2月28日",
@@ -55,8 +64,8 @@ export const History: React.FC = () => {
       header: "あの子゜がお茶菓子を持ち寄るお茶会を開催",
     },
   ];
-  const firstHalfItems = items.slice(0, 1);
-  const secondHalfItems = items.slice(1);
+  const firstHalfItems = items.slice(0, items.length / 2);
+  const secondHalfItems = items.slice(items.length / 2);
   return (
     <Section.Container Background={Background} id={SECTION.history}>
       <Section.Header name={"これまでの歩み"} icon="🦶" label="leg" />
