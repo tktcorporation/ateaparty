@@ -1,9 +1,6 @@
 import React from "react";
-import { Link } from "rebass/styled-components";
 import Tippy from "@tippy.js/react";
-import styled from "styled-components";
 import "remixicon/fonts/remixicon.css";
-import { theme } from "../../theme";
 
 type Props = {
   invert?: boolean;
@@ -12,41 +9,36 @@ type Props = {
   url: string;
 };
 
-const SocialLink = ({
+const SocialLink: React.FC<Props> = ({
   remixiconClassName,
   name,
   url,
   invert,
-}: Props): JSX.Element | null => {
+}) => {
+  // Tailwind CSSクラスを動的に適用
+  const linkClasses = `transition-opacity duration-400 ${
+    invert ? "text-background" : "text-primary"
+  } no-underline hover:opacity-70`;
+
   return (
     <Tippy
       content={name}
       placement="bottom"
       trigger="mouseenter focus"
       arrow={false}
+      className="bg-background text-primary p-1 rounded-md"
     >
-      <IconLink
+      <a
         href={url}
         target="_blank"
-        invert={invert}
         rel="noreferrer"
         aria-label={name}
+        className={linkClasses}
       >
         <i className={remixiconClassName}></i>
-      </IconLink>
+      </a>
     </Tippy>
   );
 };
-
-const IconLink = styled(Link)<{ invert?: boolean }>`
-  transition: opacity 0.4s;
-  color: ${({ invert }) =>
-    invert ? theme.colors.background : theme.colors.primary};
-  text-decoration: none;
-
-  &:hover {
-    opacity: 0.7;
-  }
-`;
 
 export default SocialLink;

@@ -32,7 +32,7 @@ export const Event: React.FC = () => {
   return (
     <Section.Container Background={Background} id={SECTION.event}>
       <Section.Header name={"何をやってるの？"} icon="👀" label="person" />
-      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <div className="flex flex-row justify-center items-center flex-wrap">
         <Box width={[1, 1, 3 / 5]} px={[2, 3, 5]} mt={2}>
           <StyledReactMarkdown>{teapartySunday}</StyledReactMarkdown>
         </Box>
@@ -52,7 +52,7 @@ export const Event: React.FC = () => {
             alt={profile.alt}
           />
         </Box>
-      </Flex>
+      </div>
     </Section.Container>
   );
 };

@@ -34,11 +34,11 @@ export const News: React.FC = () => {
   return (
     <Section.Container Background={Background} id={SECTION.news}>
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
-      <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
+      <div className="flex flex-row justify-center items-center flex-wrap">
         <Suspense fallback={Spinner()}>
           <SuspendedTweets />
         </Suspense>
-      </Flex>
+      </div>
     </Section.Container>
   );
 };
