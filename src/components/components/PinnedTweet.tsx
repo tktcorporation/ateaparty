@@ -1,5 +1,5 @@
-import { TwitterTweetEmbed } from "react-twitter-embed";
+import { SuspendedTweets } from "../molecules/SuspendedTweets";
 
 export const SuspendedPinnedTweet = (): JSX.Element => {
-  return <TwitterTweetEmbed tweetId="1668891019444617222" />;
+  return <SuspendedTweets limit={1} />;
 };
