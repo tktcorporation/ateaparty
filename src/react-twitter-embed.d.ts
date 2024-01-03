@@ -14,10 +14,6 @@ declare module "react-twitter-embed" {
   export class TwitterOnAirButton extends React.Component<TwitterOnAirButtonProps> {}
 }
 
-interface TwitterTweetEmbedProps {
-  tweetId: string;
-}
-
 // import * as React from 'react'
 
 type TwitterTimelineEmbedBaseProps = {
