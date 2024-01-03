@@ -3,7 +3,7 @@ import ScrollIcon from "../components/ScrollIcon";
 import Triangle from "../components/Triangle";
 import { SECTION, BASE_URL } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Logo } from "../../domain/Logo";
 
 const LandingPage = (): JSX.Element => {
