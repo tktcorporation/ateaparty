@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Image, Flex } from "rebass/styled-components";
+import { Box, Image } from "rebass/styled-components";
 import Section from "../components/Section";
 // import Triangle from '../components/Triangle';
 import { BASE_URL, SECTION, TITLE } from "../utils/constants";

@@ -4,7 +4,7 @@
 
 ## Prerequirements
 
-- Docker, docker-compose
+-   Docker, docker-compose
 
 ## Get Started
 
@@ -49,4 +49,5 @@ yarn format
 ```
 
 ## Deploy
+
 Deploying to Vercel is done automatically when pushing to the main branch.

@@ -18,11 +18,11 @@ describe("TwitterUrl", () => {
     expect(result.length).toBe(2);
     expect(result[0].name).toBe("第67回 題名のないお茶会");
     expect(result[0].url).toBe(
-      "https://twitter.com/ochakai_vrc/status/1488645900973277184?cxt=HHwWgIDUvenj3agpAAAA"
+      "https://twitter.com/ochakai_vrc/status/1488645900973277184?cxt=HHwWgIDUvenj3agpAAAA",
     );
     expect(result[1].name).toBe("君のピアノは");
     expect(result[1].url).toBe(
-      "https://twitter.com/ochakai_vrc/status/1480817458441498624?s=20&t=vy6RBWv5u44rnoQpMGKm3g"
+      "https://twitter.com/ochakai_vrc/status/1480817458441498624?s=20&t=vy6RBWv5u44rnoQpMGKm3g",
     );
   });
 });

@@ -27,8 +27,9 @@ const LandingPage = (): JSX.Element => {
               style={{
                 verticalAlign: "middle",
                 width: "100%",
-                height: "auto"
-              }} />
+                height: "auto",
+              }}
+            />
           </div>
         </div>
         <div>
@@ -39,8 +40,9 @@ const LandingPage = (): JSX.Element => {
             height={300}
             style={{
               maxWidth: "100%",
-              height: "auto"
-            }} />
+              height: "auto",
+            }}
+          />
         </div>
         <div className="text-center flex items-center justify-center">
           <div className="text-2xl md:text-6xl">

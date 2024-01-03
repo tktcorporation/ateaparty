@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Flex, Box } from "rebass/styled-components";
+import { Box } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import { TwitterTweetEmbed } from "react-twitter-embed";

@@ -15,10 +15,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer
-      className={`p-2 md:p-3 bg-primary`}
-      id="footer"
-    >
+    <footer className={`p-2 md:p-3 bg-primary`} id="footer">
       <div className="max-w-screen-lg flex justify-between items-center mx-auto px-4 sm:px-6 lg:px-8">
         <p className="text-base md:text-lg text-background">
           <span>{name}</span>

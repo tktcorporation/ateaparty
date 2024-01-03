@@ -5,7 +5,7 @@ export const getSectionHref = (section: SECTION): string => {
 };
 
 const wrapPromise = <T>(
-  promise: Promise<T>
+  promise: Promise<T>,
 ): {
   read(): T;
 } => {
@@ -19,7 +19,7 @@ const wrapPromise = <T>(
     (e) => {
       status = "error";
       result = e;
-    }
+    },
   );
   return {
     read: () => {
@@ -36,7 +36,7 @@ const wrapPromise = <T>(
 };
 
 export const createResource = <T>(
-  promise: Promise<T>
+  promise: Promise<T>,
 ): {
   read(): T;
 } => {

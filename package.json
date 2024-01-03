@@ -10,11 +10,11 @@
     "lint:eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=5",
     "lint:prettier": "prettier --check .",
     "test": "jest",
-    "fix": "yarn format && eslint --fix . && yarn test && yarn build"
+    "fix": "nr format && eslint --fix . && nr test && nr build"
   },
   "dependencies": {
     "@rebass/preset": "4.0.5",
-    "@tippy.js/react": "3.1.1",
+    "@tippyjs/react": "4.2.6",
     "axios": "1.6.3",
     "babel-plugin-styled-components": "2.1.4",
     "comma-separated-values": "3.6.4",
@@ -29,11 +29,10 @@
     "react-use": "17.4.2",
     "rebass": "4.0.7",
     "remixicon": "^4.0.1",
-    "tailwindcss": "^3.4.0",
-    "styled-components": "6.1.6"
+    "styled-components": "6.1.6",
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@types/axios": "0.14.0",
     "@types/jest": "29.5.11",
     "@types/react": "18.2.46",
     "@types/react-headroom": "3.2.3",

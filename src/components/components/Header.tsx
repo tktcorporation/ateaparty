@@ -31,7 +31,10 @@ const Header = (): JSX.Element => {
       style={{ backgroundColor: theme.colors.primary }}
     >
       <div className="flex flex-wrap justify-between items-center px-3">
-        <a href={`#${getSectionHref(SECTION.home)}`} className="flex justify-center">
+        <a
+          href={`#${getSectionHref(SECTION.home)}`}
+          className="flex justify-center"
+        >
           <img
             src={profile.bigIcon.src}
             height="80"
@@ -44,7 +47,10 @@ const Header = (): JSX.Element => {
           {Object.keys(SECTION)
             .filter((id) => id !== "home")
             .map((id) => (
-              <div key={id} className="ml-2 md:ml-3 text-background text-base md:text-lg">
+              <div
+                key={id}
+                className="ml-2 md:ml-3 text-background text-base md:text-lg"
+              >
                 <Link href={`#${id}`} tabIndex={0}>
                   {capitalize(id)}
                 </Link>
