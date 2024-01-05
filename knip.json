@@ -6,7 +6,11 @@
   ],
   "project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
   "ignoreBinaries": ["nr"],
-  "ignoreDependencies": ["firebase", "babel-plugin-styled-components"],
+  "ignoreDependencies": [
+    "firebase",
+    "babel-plugin-styled-components",
+    "@types/jest"
+  ],
   "ignore": [
     "**/node_modules/**",
     "**/dist/**",
