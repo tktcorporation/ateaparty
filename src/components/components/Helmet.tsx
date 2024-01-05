@@ -1,12 +1,10 @@
 import React from "react";
-import { Head } from "next/document";
+import Head from "next/head";
 import { Logo } from "../../domain/Logo";
 import { BASE_URL, TITLE } from "../utils/constants";
 import { theme } from "../../theme";
 
-new Logo(BASE_URL).symbolUrl;
-
-const Helmet = (): JSX.Element => {
+export const Helmet = (): JSX.Element => {
   const { title, description, profile } = {
     title: TITLE,
     description: "VRChatで活動するクラシックを中心とした演奏愛好家の集いです",
@@ -20,15 +18,10 @@ const Helmet = (): JSX.Element => {
 
   return (
     <Head>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Kiwi+Maru&display=swap"
-      />
-
       <link rel="icon" href="/favicon.ico" />
       <meta charSet="utf-8" />
       <title>{title}</title>
-      <meta name="viewport" content="width=device-width" />
+      {/* <meta name="viewport" content="width=device-width" /> */}
       <meta name="description" content={description} />
       <link rel="shortcut icon" href={`${profile.bigIcon.src}`} />
       <meta name="theme-color" content={theme.colors.background} />
@@ -72,4 +65,3 @@ const Helmet = (): JSX.Element => {
     </Head>
   );
 };
-export default Helmet;
