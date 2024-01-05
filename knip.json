@@ -1,0 +1,17 @@
+{
+  "$schema": "https://unpkg.com/knip@3/schema.json",
+  "entry": [
+    "{index,main,cli}.{js,cjs,mjs,jsx,ts,cts,mts,tsx}",
+    "src/{index,main,cli}.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"
+  ],
+  "project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
+  "ignoreBinaries": ["nr"],
+  "ignoreDependencies": ["firebase", "babel-plugin-styled-components"],
+  "ignore": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/coverage/**",
+    "**/firebase.*"
+  ]
+}
