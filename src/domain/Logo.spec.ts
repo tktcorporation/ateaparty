@@ -15,6 +15,8 @@ describe("Logo class", () => {
   });
   it("yokogumi url", () => {
     const logo = new Logo("https://example.com/");
-    expect(logo.yokogumiUrl()).toBe("https://example.com/logo_yokogumi.png");
+    expect(logo.yokogumiUrl({ isPath: false, ext: "png" })).toBe(
+      "https://example.com/logo_yokogumi.png",
+    );
   });
 });
