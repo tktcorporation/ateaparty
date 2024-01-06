@@ -14,7 +14,7 @@
     "test": "jest",
     "fix": "nr format && eslint --fix .",
     "find-deadcode": "knip",
-    "precommit": "nr lint:eslint && nr lint:prettier",
+    "precommit": "ni --frozen && nr lint:eslint && nr lint:prettier",
     "ci": "nr precommit && nr find-deadcode && nr test && nr build"
   },
   "simple-git-hooks": {
