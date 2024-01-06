@@ -17,12 +17,9 @@ jobs:
           node-version: "18.x"
       - name: install, lint and test, build
         run: |
-          npm i -g yarn
-          yarn
-          yarn lint:eslint
-          yarn lint:prettier
-          yarn test
-          yarn build
+          npm i -g @antfu/ni
+          ni --frozen
+          nr ci
 
   dependabot:
     runs-on: ubuntu-latest

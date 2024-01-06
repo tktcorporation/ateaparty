@@ -20,7 +20,7 @@ type ItemProps = {
   header: string;
   children?: React.ReactNode;
 };
-export const Item = ({ label, header, children }: ItemProps): JSX.Element => {
+const Item = ({ label, header, children }: ItemProps): JSX.Element => {
   return (
     <li className="mb-5 ml-4">
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border dark:border-gray-900 dark:bg-gray-700"></div>
