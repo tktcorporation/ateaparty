@@ -1,7 +1,8 @@
 export class Logo {
   constructor(private readonly baseUrl: string) {}
 
-  yokogumiUrl = (): string => this.baseUrl + "logo_yokogumi.png";
+  yokogumiUrl = (params: { isPath: boolean; ext: "png" | "svg" }): string =>
+    `${params.isPath ? "/" : this.baseUrl}logo_yokogumi.${params.ext}`;
   symbolUrl = (params: { isPath: boolean; ext: "png" | "svg" }): string =>
     `${params.isPath ? "/" : this.baseUrl}logo_symbol.${params.ext}`;
   pcQuestIconUrl = (params: { isPath: boolean }): string =>
