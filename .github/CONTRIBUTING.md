@@ -6,4 +6,5 @@ see: https://gitmoji.dev/
 -   :art: - Improve structure / format of the code.
 -   :recycle: - Refactor code.
 -   :technologist: - Improve developer experience
+-   :white_check_mark: - Add or update tests.
 -   more...

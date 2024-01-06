@@ -34,8 +34,8 @@ const LandingPage = (): JSX.Element => {
         </div>
         <div>
           <Image
-            src="/logo_yokogumi.svg"
-            alt="Ateapaty Logo"
+            src={new Logo(BASE_URL).yokogumiUrl({ isPath: true, ext: "png" })}
+            alt="題名のないお茶会"
             width={1200}
             height={300}
             style={{

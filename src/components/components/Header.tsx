@@ -6,6 +6,7 @@ import { BASE_URL, SECTION, TITLE } from "../utils/constants";
 import { getSectionHref } from "../utils/helpers";
 import { Logo } from "../../domain/Logo";
 import { theme } from "../../theme";
+import Image from "next/image";
 
 const props = {
   profile: {
@@ -35,11 +36,11 @@ const Header = (): JSX.Element => {
           href={`#${getSectionHref(SECTION.home)}`}
           className="flex justify-center"
         >
-          <img
+          <Image
             src={profile.bigIcon.src}
-            height="80"
-            width="80"
-            alt="Portfolio Logo"
+            height={80}
+            width={80}
+            alt="Logo Icon"
             className="h-[60px] md:h-[80px] w-[60px] md:w-[80px] p-2 rounded-lg cursor-pointer"
           />
         </a>

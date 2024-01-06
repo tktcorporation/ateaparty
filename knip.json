@@ -5,7 +5,7 @@
     "src/{index,main,cli}.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"
   ],
   "project": ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
-  "ignoreBinaries": ["nr"],
+  "ignoreBinaries": ["nr", "ni", "only-allow"],
   "ignoreDependencies": [
     "firebase",
     "babel-plugin-styled-components",
