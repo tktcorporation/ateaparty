@@ -38,7 +38,7 @@
     "tailwindcss": "^3.4.10"
   },
   "devDependencies": {
-    "@types/jest": "29.5.12",
+    "@types/jest": "29.5.13",
     "@types/react": "18.3.5",
     "@types/react-headroom": "3.2.3",
     "@types/rebass": "4.0.14",
