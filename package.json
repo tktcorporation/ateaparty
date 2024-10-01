@@ -25,7 +25,7 @@
     "@tippyjs/react": "4.2.6",
     "axios": "1.7.7",
     "comma-separated-values": "3.6.4",
-    "firebase": "10.13.2",
+    "firebase": "10.14.0",
     "next": "14.2.13",
     "react": "18.3.1",
     "react-dom": "18.3.1",
