@@ -35,7 +35,7 @@
     "rebass": "4.0.7",
     "remixicon": "^4.3.0",
     "styled-components": "6.1.13",
-    "tailwindcss": "^3.4.13"
+    "tailwindcss": "^3.4.14"
   },
   "devDependencies": {
     "@types/jest": "29.5.13",
