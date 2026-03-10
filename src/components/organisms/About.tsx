@@ -29,7 +29,7 @@ const About: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <TwitterTimeline tweetLimit={1} />
+          <TwitterTimeline height={300} />
         </Box>
       </div>
     </Section.Container>

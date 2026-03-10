@@ -11,7 +11,7 @@ export const News: React.FC = () => {
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
       <div className="flex justify-center w-full px-4">
         <div className="w-full max-w-lg">
-          <TwitterTimeline tweetLimit={5} />
+          <TwitterTimeline height={800} />
         </div>
       </div>
     </Section.Container>

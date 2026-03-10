@@ -33,6 +33,7 @@
     "react-dom": "18.3.1",
     "react-headroom": "3.2.1",
     "react-markdown": "9.1.0",
+    "react-tweet": "^3.3.0",
     "rebass": "4.0.7",
     "remixicon": "^4.9.1",
     "styled-components": "6.3.11",
