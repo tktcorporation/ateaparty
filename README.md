@@ -4,7 +4,7 @@
 
 ## Prerequirements
 
--   Docker, docker-compose
+- Docker, docker-compose
 
 ## Get Started
 
@@ -36,13 +36,13 @@ yarn test
 
 #### Linter, Formatter
 
--   Lint
+- Lint
 
 ```bash
 yarn lint
 ```
 
--   Format
+- Format
 
 ```bash
 yarn format

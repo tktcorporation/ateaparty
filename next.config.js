@@ -3,11 +3,23 @@ const path = require("path");
 module.exports = {
   env: {},
   images: {
-    domains: [
-      "images.microcms-assets.io",
-      "qiita-user-contents.imgix.net",
-      "staging-qiita-user-contents.imgix.net",
-      "assets.st-note.com",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.microcms-assets.io",
+      },
+      {
+        protocol: "https",
+        hostname: "qiita-user-contents.imgix.net",
+      },
+      {
+        protocol: "https",
+        hostname: "staging-qiita-user-contents.imgix.net",
+      },
+      {
+        protocol: "https",
+        hostname: "assets.st-note.com",
+      },
     ],
   },
   webpack(config) {
