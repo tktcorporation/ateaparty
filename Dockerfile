@@ -1,3 +1,4 @@
+# Node version should match package.json engines.node
 FROM node:22-bookworm-slim AS build-env
 
 ENV LC_ALL=C.UTF-8
