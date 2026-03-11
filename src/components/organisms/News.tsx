@@ -1,19 +1,18 @@
-import React, { Suspense } from "react";
+import React from "react";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 
 import Triangle from "../components/Triangle";
-import { Spinner } from "../components/Spinner";
-import { SuspendedTweets } from "../molecules/SuspendedTweets";
+import { TwitterTimeline } from "../components/TwitterTimeline";
 
 export const News: React.FC = () => {
   return (
     <Section.Container Background={Background} id={SECTION.news}>
       <Section.Header name={"お知らせ"} icon="📰" label="person" />
-      <div className="flex flex-row justify-center items-center flex-wrap">
-        <Suspense fallback={Spinner()}>
-          <SuspendedTweets />
-        </Suspense>
+      <div className="flex justify-center w-full px-4">
+        <div className="w-full max-w-lg">
+          <TwitterTimeline height={800} />
+        </div>
       </div>
     </Section.Container>
   );

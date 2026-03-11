@@ -1,11 +1,10 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { Box } from "rebass/styled-components";
 import Section from "../components/Section";
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
-import { SuspendedPinnedTweet } from "../components/PinnedTweet";
-import { Spinner } from "../components/Spinner";
+import { TwitterTimeline } from "../components/TwitterTimeline";
 
 const vision = `## 演奏者に表現の場を
 ## 演奏者に交流の場を
@@ -30,9 +29,7 @@ const About: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <Suspense fallback={<Spinner />}>
-            <SuspendedPinnedTweet />
-          </Suspense>
+          <TwitterTimeline height={300} />
         </Box>
       </div>
     </Section.Container>

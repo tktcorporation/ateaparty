@@ -26,7 +26,6 @@
   "dependencies": {
     "@rebass/preset": "4.0.5",
     "@tippyjs/react": "4.2.6",
-    "axios": "1.13.6",
     "comma-separated-values": "3.6.4",
     "firebase": "11.9.0",
     "next": "15.5.12",
@@ -34,7 +33,7 @@
     "react-dom": "18.3.1",
     "react-headroom": "3.2.1",
     "react-markdown": "9.1.0",
-    "react-twitter-embed": "4.0.4",
+    "react-tweet": "^3.3.0",
     "rebass": "4.0.7",
     "remixicon": "^4.9.1",
     "styled-components": "6.3.11",
@@ -42,7 +41,8 @@
   },
   "devDependencies": {
     "@types/jest": "29.5.14",
-    "@types/react": "18.3.18",
+    "@types/node": "25.4.0",
+    "@types/react": "19.2.14",
     "@types/react-headroom": "3.2.3",
     "@types/rebass": "4.0.15",
     "@typescript-eslint/eslint-plugin": "7.18.0",

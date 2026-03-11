@@ -1,6 +1,7 @@
 const path = require("path");
 
 module.exports = {
+  transpilePackages: ["react-tweet"],
   env: {},
   images: {
     remotePatterns: [
@@ -19,6 +20,14 @@ module.exports = {
       {
         protocol: "https",
         hostname: "assets.st-note.com",
+      },
+      {
+        protocol: "https",
+        hostname: "pbs.twimg.com",
+      },
+      {
+        protocol: "https",
+        hostname: "abs.twimg.com",
       },
     ],
   },
