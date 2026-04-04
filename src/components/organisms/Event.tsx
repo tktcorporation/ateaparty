@@ -1,11 +1,10 @@
 import React from "react";
 import { Box } from "rebass/styled-components";
 import Section from "../components/Section";
-// import Triangle from '../components/Triangle';
 import { SECTION } from "../utils/constants";
 import Triangle from "../components/Triangle";
 import StyledReactMarkdown from "../components/MarkdownRenderer";
-import { TwitterTweetEmbed } from "react-twitter-embed";
+import { Tweet } from "react-tweet";
 
 const teapartySunday = `# 毎週 日曜日のお茶会
 毎週日曜日の14時30分からお茶会を開催しています。
@@ -28,7 +27,7 @@ export const Event: React.FC = () => {
           width={[1, 1, 2 / 5]}
           style={{ maxWidth: "500px", margin: "auto" }}
         >
-          <TwitterTweetEmbed tweetId="1673654071885017091" />
+          <Tweet id="1673654071885017091" />
         </Box>
       </div>
     </Section.Container>
